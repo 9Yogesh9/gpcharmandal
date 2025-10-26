@@ -1,389 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>ग्रामपंचायत चारमंडळ</title>
-    <link rel="icon" href="asset/images/gpLogo.png" type="image/png" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-  </head>
-  <body>
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
 
-    <!-- navbar -->
-    <div class="d-flex flex-column sticky-top glass-div p-1">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand" id="v_logo" href="#">
-            <img
-              src="https://static.wixstatic.com/media/a6c8a4_3fe8b0c74562406ea7d7a04c245aa240~mv2.png/v1/fill/w_92,h_76,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/gram%20logo%20copy.png"
-              alt="Bootstrap"
-              width="80%"
-              height="80%"
-              alt="web_logo"
-          /></a>
-          <div id="header-text">
-            <p class="header-line">ISO 9001:2015</p>
-            <p class="header-line">ग्रामपंचायत चारमंडळ</p>
-          </div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link text-danger-emphasis active" href="#">होम</a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link text-danger-emphasis active"
-                  href="#mahitipat"
-                  >ग्रामपंचायत कार्यालय चारमंडळ</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-danger-emphasis" href="#samitya"
-                  >समित्या</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-danger-emphasis" href="#upkram"
-                  >उपक्रम व प्रकल्प</a
-                >
-              </li>
-              <li class="nav-item">
-                <!-- aria-disabled ="true" disabled-->
-                <a class="nav-link text-danger-emphasis" href="#bachat"
-                  >बचत गट</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-danger-emphasis" href="#ahwal">अहवाल</a>
-              </li>
-              <li class="nav-item" id="login">
-                <a
-                  class="nav-link fw-bold"
-                  data-bs-toggle="modal"
-                  data-bs-target="#loginModal"
-                  href="#"
-                  >लॉगिन</a
-                >
-              </li>
-              <li class="nav-item" id="logout">
-                <a class="nav-link fw-bold" href="#">लॉग आउट</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>ग्रामपंचायत चारमंडळ</title>
+  <link rel="icon" href="asset/images/gpLogo.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
 
-    <!-- Loader -->
-    <div class="glass-div make_sticky_banner" id="banner_display">
-      <div class="spinner-border text-primary" role="status">
-        <span class="sr-only"></span>
-      </div>
-      <div class="h3 text-primary poppins-regular" id="apicalled">
-        Data Updating...
-      </div>
-    </div>
+<body>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
 
-    <!-- Carousel -->
-    <div class="d-flex align-item-center justify-content-evenly p-3">
-      <div class="d-flex align-item-center justify-content-evenly w-60">
-        <div
-          id="carouselExampleAutoplaying"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner rounded-5">
-            <div class="carousel-item active">
-              <img
-                class="object-fit-scale w-100"
-                src="asset\images\Grampanchyat.jpeg"
-                alt="..."
-                class="img-fluid"
-              />
-              <!-- class="d-block w-100" -->
-              <!-- src="https://www.nkindia.in/wp-content/uploads/2023/12/agriculture-1.jpg" -->
-              <div class="carousel-caption d-none d-md-block">
-                <h5>ग्रामपंचायत पळसगांव (बाई)</h5>
-                <p>
-                  Some representative placeholder content for the second slide.
-                </p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="object-fit-scale w-100"
-                src="https://i.ytimg.com/vi/FahtGeonuQw/maxresdefault.jpg"
-                alt="..."
-                class="img-fluid"
-              />
-              <!-- class="d-block w-100" -->
-              <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>
-                  Some representative placeholder content for the first slide.
-                </p>
-              </div>
-            </div>
-
-            <div class="carousel-item">
-              <img
-                class="object-fit-scale w-100"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Gram_Panchayat_Shakapur_Addakal_Mahabubnagar.jpg/2560px-Gram_Panchayat_Shakapur_Addakal_Mahabubnagar.jpg"
-                alt="..."
-                class="img-fluid"
-              />
-              <!-- class="d-block w-100" -->
-              <!-- src="https://www.nkindia.in/wp-content/uploads/2023/12/agriculture-1.jpg" -->
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>
-                  Some representative placeholder content for the second slide.
-                </p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="object-fit-scale w-100"
-                src="https://media.assettype.com/deccanherald%2F2025-05-20%2Fdph05fkl%2FNagarahole-Gram-Sabha-Photo-1.jpg?w=900&auto=format%2Ccompress&fit=max"
-                alt="..."
-                class="img-fluid"
-              />
-              <!-- class="d-block w-100" -->
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>
-                  Some representative placeholder content for the third slide.
-                </p>
-              </div>
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- rolling text -->
-    <div class="d-flex align-item-center justify-content-evenly">
-      <h2 class="rozha-one-regular">
-        <marquee>
-          ​🙏🏻ग्रामपंचायत चारमंडळ पं.स. सेलू, जि.प. वर्धा आपले सहर्ष स्वागत
-          करीत आहे.🙏🏻
-        </marquee>
-      </h2>
-    </div>
-
-    <!-- certificates -->
-    <div class="container text-center p-3">
-      <div class="cert_profile">
-        <div class="cert_width">
+  <!-- navbar -->
+  <div class="d-flex flex-column sticky-top glass-div p-1">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" id="v_logo" href="#">
           <img
-            src="https://static.vecteezy.com/system/resources/previews/003/558/456/large_2x/vertical-modern-certificate-template-vector.jpg"
-            class="img-thumbnail rounded"
-            alt="certificate1"
-          />
+            src="https://static.wixstatic.com/media/a6c8a4_3fe8b0c74562406ea7d7a04c245aa240~mv2.png/v1/fill/w_92,h_76,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/gram%20logo%20copy.png"
+            alt="Bootstrap" width="80%" height="80%" alt="web_logo" /></a>
+        <div id="header-text">
+          <p class="header-line">ISO 9001:2015</p>
+          <p class="header-line">ग्रामपंचायत चारमंडळ</p>
         </div>
-        <div class="cert_width">
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/003/558/456/large_2x/vertical-modern-certificate-template-vector.jpg"
-            class="img-thumbnail rounded"
-            alt="certificate1"
-          />
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-danger-emphasis active" href="#">होम</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-danger-emphasis active" href="#mahitipat">ग्रामपंचायत कार्यालय चारमंडळ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-danger-emphasis" href="#samitya">समित्या</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-danger-emphasis" href="#upkram">उपक्रम व प्रकल्प</a>
+            </li>
+            <li class="nav-item">
+              <!-- aria-disabled ="true" disabled-->
+              <a class="nav-link text-danger-emphasis" href="#bachat">बचत गट</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-danger-emphasis" href="#ahwal">अहवाल</a>
+            </li>
+            <li class="nav-item" id="login">
+              <a class="nav-link fw-bold" data-bs-toggle="modal" data-bs-target="#loginModal" href="#">लॉगिन</a>
+            </li>
+            <li class="nav-item" id="logout">
+              <a class="nav-link fw-bold" href="#">लॉग आउट</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
+  </div>
 
-    <!-- Mahitipat -->
-    <div id="mahitipat">
-      <div class="card cust_card" style="width: 18rem">
+  <!-- Loader -->
+  <div class="glass-div make_sticky_banner" id="banner_display">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only"></span>
+    </div>
+    <div class="h3 text-primary poppins-regular" id="apicalled">
+      Data Updating...
+    </div>
+  </div>
+
+  <!-- Carousel -->
+  <div class="d-flex align-item-center justify-content-evenly p-3">
+    <div class="d-flex align-item-center justify-content-evenly w-60">
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner rounded-5">
+          <div class="carousel-item active">
+            <img class="object-fit-scale w-100" src="asset\images\Grampanchyat.jpeg" alt="..." class="img-fluid" />
+            <!-- class="d-block w-100" -->
+            <!-- src="https://www.nkindia.in/wp-content/uploads/2023/12/agriculture-1.jpg" -->
+            <div class="carousel-caption d-none d-md-block">
+              <h5>ग्रामपंचायत पळसगांव (बाई)</h5>
+              <p>
+                Some representative placeholder content for the second slide.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="object-fit-scale w-100" src="https://i.ytimg.com/vi/FahtGeonuQw/maxresdefault.jpg" alt="..."
+              class="img-fluid" />
+            <!-- class="d-block w-100" -->
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>
+                Some representative placeholder content for the first slide.
+              </p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img class="object-fit-scale w-100"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Gram_Panchayat_Shakapur_Addakal_Mahabubnagar.jpg/2560px-Gram_Panchayat_Shakapur_Addakal_Mahabubnagar.jpg"
+              alt="..." class="img-fluid" />
+            <!-- class="d-block w-100" -->
+            <!-- src="https://www.nkindia.in/wp-content/uploads/2023/12/agriculture-1.jpg" -->
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>
+                Some representative placeholder content for the second slide.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="object-fit-scale w-100"
+              src="https://media.assettype.com/deccanherald%2F2025-05-20%2Fdph05fkl%2FNagarahole-Gram-Sabha-Photo-1.jpg?w=900&auto=format%2Ccompress&fit=max"
+              alt="..." class="img-fluid" />
+            <!-- class="d-block w-100" -->
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>
+                Some representative placeholder content for the third slide.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- rolling text -->
+  <div class="d-flex align-item-center justify-content-evenly">
+    <h2 class="rozha-one-regular">
+      <marquee>
+        ​🙏🏻ग्रामपंचायत चारमंडळ पं.स. सेलू, जि.प. वर्धा आपले सहर्ष स्वागत
+        करीत आहे.🙏🏻
+      </marquee>
+    </h2>
+  </div>
+
+  <!-- certificates -->
+  <div class="container text-center p-3">
+    <div class="cert_profile">
+      <div class="cert_width">
         <img
-          src="https://media.geeksforgeeks.org/wp-content/uploads/20230222104738/file.png"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title colour-change">ग्रामपंचायत माहिती</h5>
-          <p class="card-text">
-            महाराष्ट्रातील ग्रामपंचायत ही गावांमधील तळागाळातील स्थानिक स्वराज्य
-            संस्था आहे. ती स्वच्छता, पाणी, रस्ते, कल्याणकारी योजना आणि नोंदी
-            व्यवस्थापित करते. सदस्य निवडले जातात आणि सरपंच प्रशासकीय आणि
-            विकासात्मक उपक्रमांचे नेतृत्व करतात.
-          </p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item fw-semibold">लोकसंख्या:१२३४५६७</li>
-          <li class="list-group-item fw-semibold">स्त्री:१२३४ | पुरुष:२३४५</li>
-          <li class="list-group-item fw-semibold">शौचालय संख्या:४५३६</li>
-        </ul>
-        <!-- <div class="card-body">
+          src="https://static.vecteezy.com/system/resources/previews/003/558/456/large_2x/vertical-modern-certificate-template-vector.jpg"
+          class="img-thumbnail rounded" alt="certificate1" />
+      </div>
+      <div class="cert_width">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/003/558/456/large_2x/vertical-modern-certificate-template-vector.jpg"
+          class="img-thumbnail rounded" alt="certificate1" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Mahitipat -->
+  <div id="mahitipat">
+    <div class="card cust_card" style="width: 18rem">
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230222104738/file.png" class="card-img-top"
+        alt="..." />
+      <div class="card-body">
+        <h5 class="card-title colour-change">ग्रामपंचायत माहिती</h5>
+        <p class="card-text">
+          महाराष्ट्रातील ग्रामपंचायत ही गावांमधील तळागाळातील स्थानिक स्वराज्य
+          संस्था आहे. ती स्वच्छता, पाणी, रस्ते, कल्याणकारी योजना आणि नोंदी
+          व्यवस्थापित करते. सदस्य निवडले जातात आणि सरपंच प्रशासकीय आणि
+          विकासात्मक उपक्रमांचे नेतृत्व करतात.
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item fw-semibold">लोकसंख्या:१२३४५६७</li>
+        <li class="list-group-item fw-semibold">स्त्री:१२३४ | पुरुष:२३४५</li>
+        <li class="list-group-item fw-semibold">शौचालय संख्या:४५३६</li>
+      </ul>
+      <!-- <div class="card-body">
           <a href="#" class="card-link">Card link</a>
           <a href="#" class="card-link">Another link</a>
         </div> -->
-      </div>
+    </div>
 
-      <div class="card cust_card" style="width: 18rem">
-        <img
-          src="asset/images/sarpanch.png"
-          class="card-img-top"
-          alt="sarpanchPhoto"
-        />
-        <div class="card-body">
-          <h5 class="card-title colour-change">माननीय सरपंच</h5>
-          <p class="card-text">
-            सरपंच हा भारतातील ग्रामीण स्थानिक स्वराज्य संस्थेच्या सर्वात लहान
-            घटक असलेल्या ग्रामपंचायतीचा निवडून आलेला प्रमुख असतो.
-          </p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">संपर्क:२३५४३५४३२</li>
-          <li class="list-group-item">संपर्क:२३५४३५४३२</li>
-          <!-- <li class="list-group-item">A third item</li> -->
-        </ul>
-        <div class="card-body">
-          <a
-            href="#"
-            class="card-link"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal3"
-            >माहिती</a
-          >
-        </div>
+    <div class="card cust_card" style="width: 18rem">
+      <img src="asset/images/sarpanch.png" class="card-img-top" alt="sarpanchPhoto" />
+      <div class="card-body">
+        <h5 class="card-title colour-change">माननीय सरपंच</h5>
+        <p class="card-text">
+          सरपंच हा भारतातील ग्रामीण स्थानिक स्वराज्य संस्थेच्या सर्वात लहान
+          घटक असलेल्या ग्रामपंचायतीचा निवडून आलेला प्रमुख असतो.
+        </p>
       </div>
-
-      <div class="card cust_card" style="width: 18rem">
-        <img
-          src="asset/images/secratory.png"
-          class="card-img-top"
-          alt="sachivPhoto"
-        />
-        <div class="card-body">
-          <h5 class="card-title colour-change">माननीय सचिव</h5>
-          <p class="card-text">
-            ग्रामपंचायत सचिव ग्रामसभा आणि ग्रामपंचायतीचा सचिव असून तो रेकॉर्ड,
-            प्रशासन, योजना आणि विकास कार्यक्रमांची जबाबदारी सांभाळतो.
-          </p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">संपर्क:२३५४३५४३२</li>
-          <li class="list-group-item">संपर्क:२३५४३५४३२</li>
-          <!-- <li class="list-group-item">A third item</li> -->
-        </ul>
-        <div class="card-body">
-          <a
-            href="#"
-            class="card-link"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal4"
-            >माहिती</a
-          >
-        </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">संपर्क:२३५४३५४३२</li>
+        <li class="list-group-item">संपर्क:२३५४३५४३२</li>
+        <!-- <li class="list-group-item">A third item</li> -->
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#exampleModal3">माहिती</a>
       </div>
     </div>
-    <div class="floating-view-count" id="viewcontainer" style="display: none">
-      <button type="button" class="btn btn-dark">
-        Views: <span id="viewCount">123</span>
-      </button>
+
+    <div class="card cust_card" style="width: 18rem">
+      <img src="asset/images/secratory.png" class="card-img-top" alt="sachivPhoto" />
+      <div class="card-body">
+        <h5 class="card-title colour-change">माननीय सचिव</h5>
+        <p class="card-text">
+          ग्रामपंचायत सचिव ग्रामसभा आणि ग्रामपंचायतीचा सचिव असून तो रेकॉर्ड,
+          प्रशासन, योजना आणि विकास कार्यक्रमांची जबाबदारी सांभाळतो.
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">संपर्क:२३५४३५४३२</li>
+        <li class="list-group-item">संपर्क:२३५४३५४३२</li>
+        <!-- <li class="list-group-item">A third item</li> -->
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#exampleModal4">माहिती</a>
+      </div>
     </div>
-    <!-- Button Groups -->
-    <span>
-      <!-- Public services -->
-      <div class="container-fluid btnvertical">
-        <h1
-          class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
-        >
-          सार्वजनिक सेवा/दाखले मागणी
-        </h1>
-        <div class="button-container">
-          <button
-            type="button"
-            class="btn btncustomise btn-primary poppins-regular"
-            data-bs-toggle="modal"
-            data-bs-target="#complaint"
-          >
-            नवीन तक्रार करा</button
-          ><button
-            type="button"
-            class="btn btncustomise btn-primary poppins-regular"
-            data-bs-toggle="modal"
-            data-bs-target="#complaintSearchModal"
-          >
-            तक्रार स्थिती</button
-          ><button
-            type="button"
-            class="btn btncustomise btn-primary poppins-regular"
-            data-bs-toggle="modal"
-            data-bs-target="#houseModal"
-          >
-            नमुना ९
-          </button>
-          <!-- </div>
+  </div>
+  <div class="floating-view-count" id="viewcontainer" style="display: none">
+    <button type="button" class="btn btn-dark">
+      Views: <span id="viewCount">123</span>
+    </button>
+  </div>
+  <!-- Button Groups -->
+  <span>
+    <!-- Public services -->
+    <div class="container-fluid btnvertical">
+      <h1 class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7">
+        सार्वजनिक सेवा/दाखले मागणी
+      </h1>
+      <div class="button-container">
+        <button type="button" class="btn btncustomise btn-primary poppins-regular" data-bs-toggle="modal"
+          data-bs-target="#complaint">
+          नवीन तक्रार करा</button><button type="button" class="btn btncustomise btn-primary poppins-regular"
+          data-bs-toggle="modal" data-bs-target="#complaintSearchModal">
+          तक्रार स्थिती</button><button type="button" class="btn btncustomise btn-primary poppins-regular"
+          data-bs-toggle="modal" data-bs-target="#houseModal">
+          नमुना ९
+        </button>
+        <!-- </div>
         <div class="button-container"> -->
-          <a
-            href="https://docs.google.com/spreadsheets/d/1o9HsFe_TYCsyKMbJ3Wdd61tRON0C9r0x/edit?usp=sharing&ouid=107749767992225559173&rtpof=true&sd=true"
-            target="_blank"
-          >
-            <button
-              type="button"
-              class="btn btncustomise btn-primary poppins-regular"
-            >
-              <!-- data-bs-toggle="modal"
+        <a href="https://docs.google.com/spreadsheets/d/1o9HsFe_TYCsyKMbJ3Wdd61tRON0C9r0x/edit?usp=sharing&ouid=107749767992225559173&rtpof=true&sd=true"
+          target="_blank">
+          <button type="button" class="btn btncustomise btn-primary poppins-regular">
+            <!-- data-bs-toggle="modal"
             data-bs-target="#samiti2" -->
-              गाव नमूना ८
-            </button></a
-          >
-          <!-- <button
+            गाव नमूना ८
+          </button></a>
+        <!-- <button
             type="button"
             class="btn btncustomise btn-primary poppins-regular"
             data-bs-toggle="modal"
@@ -391,378 +279,224 @@
           >
             Demo
           </button> -->
+      </div>
+    </div>
+    <hr class="w-75 hrline" />
+
+    <!-- Public complaint list -->
+    <span id="publicComplaintContainer" style="display: none">
+      <div class="container-fluid btnvertical" id="takrarlist_public">
+        <h1 class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7">
+          तुमच्या तक्रारी
+        </h1>
+        <div class="complaint_container">
+          <div class="list-group poppins-regular" id="complaintList_public"></div>
         </div>
       </div>
       <hr class="w-75 hrline" />
+    </span>
 
-      <!-- Public complaint list -->
-      <span id="publicComplaintContainer" style="display: none">
-        <div class="container-fluid btnvertical" id="takrarlist_public">
-          <h1
-            class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
-          >
-            तुमच्या तक्रारी
-          </h1>
-          <div class="complaint_container">
-            <div
-              class="list-group poppins-regular"
-              id="complaintList_public"
-            ></div>
-          </div>
-        </div>
-        <hr class="w-75 hrline" />
-      </span>
-
-      <!-- Multi Link -->
-      <div class="container-fluid btnvertical" id="multi_link_container">
-        <h1
-          class="text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7 poppins-regular"
-          id="multi_link"
-        >
-          ग्रामपंचायत चा लेखाजोखा
+    <!-- Multi Link -->
+    <div class="container-fluid btnvertical" id="multi_link_container">
+      <h1 class="text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7 poppins-regular"
+        id="multi_link">
+        ग्रामपंचायत चा लेखाजोखा
+      </h1>
+      <div class="button-container">
+        <button type="button" class="btn btncustomise btn-primary poppins-regular">
+          <a href="https://gp.mahaegram.co.in/GeneralPages/LoginNew.aspx" target="_blank">
+            MahaEGram RDD</a></button><button type="button" class="btn btncustomise btn-primary poppins-regular">
+          <a href="https://egramswaraj.gov.in/" target="_blank">
+            ई-ग्राम स्वराज
+          </a></button><button type="button" class="btn btncustomise btn-primary poppins-regular">
+          <a href="https://rdd.mahaonline.gov.in/" target="_blank">
+            RDD Mahaonline
+          </a>
+        </button>
+        <!-- </div>
+        <div class="button-container"> -->
+        <button type="button" class="btn btncustomise btn-primary poppins-regular">
+          <a href="https://mh.gov2egov.com/ASSK/login.aspx" target="_blank">
+            ERP
+          </a></button><button type="button" class="btn btncustomise btn-primary poppins-regular">
+          <a href="https://cscservices.mahaonline.gov.in/Dashboard/Login.aspx" target="_blank">
+            MahaOnline
+          </a></button><button type="button" class="btn btncustomise btn-primary poppins-regular">
+          <a href="https://connect.csc.gov.in/account/authorize?response_type=code&client_id=0f8ca686-5a31-46b8-bb51-d9834ba9fa9d&redirect_uri=https%3A%2F%2Fdigitalseva.csc.gov.in%2Fauth%2Fcallback%2F&state=16563"
+            target="_blank">
+            CSC
+          </a>
+        </button>
+        <button type="button" class="btn btncustomise btn-primary poppins-regular">
+          ग्रामसभा मासिकसभा
+        </button>
+      </div>
+      <hr class="w-75 hrline" />
+    </div>
+    <span id="dynamicData">
+      <!-- Samiti -->
+      <div class="container-fluid btnvertical">
+        <h1 class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
+          id="samitya">
+          समित्या
         </h1>
         <div class="button-container">
-          <button
-            type="button"
-            class="btn btncustomise btn-primary poppins-regular"
-          >
-            <a
-              href="https://gp.mahaegram.co.in/GeneralPages/LoginNew.aspx"
-              target="_blank"
-            >
-              MahaEGram RDD</a
-            ></button
-          ><button
-            type="button"
-            class="btn btncustomise btn-primary poppins-regular"
-          >
-            <a href="https://egramswaraj.gov.in/" target="_blank">
-              ई-ग्राम स्वराज
-            </a></button
-          ><button
-            type="button"
-            class="btn btncustomise btn-primary poppins-regular"
-          >
-            <a href="https://rdd.mahaonline.gov.in/" target="_blank">
-              RDD Mahaonline
-            </a>
+          <button type="button" class="btn btncustomise btn-primary" data-bs-toggle="modal" data-bs-target="#samiti1"
+            onclick="toggleSamitiURL('https://glcbc.org.au/prodimages/committee-members.jpg','समिती २')">
+            समिती २
           </button>
-          <!-- </div>
-        <div class="button-container"> -->
-          <button
-            type="button"
-            class="btn btncustomise btn-primary poppins-regular"
-          >
-            <a href="https://mh.gov2egov.com/ASSK/login.aspx" target="_blank">
-              ERP
-            </a></button
-          ><button
-            type="button"
-            class="btn btncustomise btn-primary poppins-regular"
-          >
-            <a
-              href="https://cscservices.mahaonline.gov.in/Dashboard/Login.aspx"
-              target="_blank"
-            >
-              MahaOnline
-            </a></button
-          ><button
-            type="button"
-            class="btn btncustomise btn-primary poppins-regular"
-          >
-            <a
-              href="https://connect.csc.gov.in/account/authorize?response_type=code&client_id=0f8ca686-5a31-46b8-bb51-d9834ba9fa9d&redirect_uri=https%3A%2F%2Fdigitalseva.csc.gov.in%2Fauth%2Fcallback%2F&state=16563"
-              target="_blank"
-            >
-              CSC
-            </a>
+          <button type="button" class="btn btncustomise btn-primary" data-bs-toggle="modal" data-bs-target="#samiti1"
+            onclick="toggleSamitiURL('https://glcbc.org.au/prodimages/committee-members.jpg','समिती २')">
+            समिती २
           </button>
-          <button
-            type="button"
-            class="btn btncustomise btn-primary poppins-regular"
-          >
-            ग्रामसभा मासिकसभा
+          <button type="button" class="btn btncustomise btn-primary" data-bs-toggle="modal" data-bs-target="#samiti1"
+            onclick="toggleSamitiURL('https://glcbc.org.au/prodimages/committee-members.jpg','समिती २')">
+            समिती २
+          </button>
+          <button type="button" class="btn btncustomise btn-primary" data-bs-toggle="modal" data-bs-target="#samiti1"
+            onclick="toggleSamitiURL('https://glcbc.org.au/prodimages/committee-members.jpg','समिती २')">
+            समिती २
           </button>
         </div>
       </div>
       <hr class="w-75 hrline" />
-      <span id="dynamicData">
-        <!-- Samiti -->
-        <div class="container-fluid btnvertical">
-          <h1
-            class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
-            id="samitya"
-          >
-            समित्या
-          </h1>
-          <div class="button-container">
-            <button
-              type="button"
-              class="btn btncustomise btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#samiti1"
-              onclick="toggleSamitiURL('https://glcbc.org.au/prodimages/committee-members.jpg','समिती २')"
-            >
-              समिती २
-            </button>
-            <button
-              type="button"
-              class="btn btncustomise btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#samiti1"
-              onclick="toggleSamitiURL('https://glcbc.org.au/prodimages/committee-members.jpg','समिती २')"
-            >
-              समिती २
-            </button>
-            <button
-              type="button"
-              class="btn btncustomise btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#samiti1"
-              onclick="toggleSamitiURL('https://glcbc.org.au/prodimages/committee-members.jpg','समिती २')"
-            >
-              समिती २
-            </button>
-            <button
-              type="button"
-              class="btn btncustomise btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#samiti1"
-              onclick="toggleSamitiURL('https://glcbc.org.au/prodimages/committee-members.jpg','समिती २')"
-            >
-              समिती २
-            </button>
-          </div>
-        </div>
-        <hr class="w-75 hrline" />
 
-        <!-- Puraskar -->
-        <div class="container-fluid btnvertical">
-          <h1
-            class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
-            id="puraskar1"
-          >
-            ग्रामपंचायतला पुरस्कार
-          </h1>
-          <div class="button-container">
-            <button
-              type="button"
-              class="btn btncustomise btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#puraskar"
-              onclick="togglePuraskarURL('https://media.istockphoto.com/photos/gold-cup-trophy-on-blue-background-picture-id509530282?k=6&amp;m=509530282&amp;s=612x612&amp;w=0&amp;h=FD7s-lvvAQ63zb7jShlpFDHEBNqyX3Wo_CQw1Xouyls=','गाडगेबाबा')"
-            >
-              गाडगेबाबा
-            </button>
-            <button
-              type="button"
-              class="btn btncustomise btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#puraskar"
-              onclick="togglePuraskarURL('https://media.istockphoto.com/photos/gold-trophy-picture-id621141552?k=6&amp;m=621141552&amp;s=612x612&amp;w=0&amp;h=IumubAPd-2gLjpr9eAVea6aphFeVTOItxCCXRIubeeU=','स्मार्टग्राम')"
-            >
-              स्मार्टग्राम
-            </button>
-            <button
-              type="button"
-              class="btn btncustomise btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#puraskar"
-              onclick="togglePuraskarURL('https://media.istockphoto.com/photos/gold-trophy-picture-id621141552?k=6&amp;m=621141552&amp;s=612x612&amp;w=0&amp;h=IumubAPd-2gLjpr9eAVea6aphFeVTOItxCCXRIubeeU=','पाणी फाउंडेशन')"
-            >
-              पाणी फाउंडेशन
-            </button>
-          </div>
+      <!-- Puraskar -->
+      <div class="container-fluid btnvertical">
+        <h1 class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
+          id="puraskar1">
+          ग्रामपंचायतला पुरस्कार
+        </h1>
+        <div class="button-container">
+          <button type="button" class="btn btncustomise btn-primary" data-bs-toggle="modal" data-bs-target="#puraskar"
+            onclick="togglePuraskarURL('https://media.istockphoto.com/photos/gold-cup-trophy-on-blue-background-picture-id509530282?k=6&amp;m=509530282&amp;s=612x612&amp;w=0&amp;h=FD7s-lvvAQ63zb7jShlpFDHEBNqyX3Wo_CQw1Xouyls=','गाडगेबाबा')">
+            गाडगेबाबा
+          </button>
+          <button type="button" class="btn btncustomise btn-primary" data-bs-toggle="modal" data-bs-target="#puraskar"
+            onclick="togglePuraskarURL('https://media.istockphoto.com/photos/gold-trophy-picture-id621141552?k=6&amp;m=621141552&amp;s=612x612&amp;w=0&amp;h=IumubAPd-2gLjpr9eAVea6aphFeVTOItxCCXRIubeeU=','स्मार्टग्राम')">
+            स्मार्टग्राम
+          </button>
+          <button type="button" class="btn btncustomise btn-primary" data-bs-toggle="modal" data-bs-target="#puraskar"
+            onclick="togglePuraskarURL('https://media.istockphoto.com/photos/gold-trophy-picture-id621141552?k=6&amp;m=621141552&amp;s=612x612&amp;w=0&amp;h=IumubAPd-2gLjpr9eAVea6aphFeVTOItxCCXRIubeeU=','पाणी फाउंडेशन')">
+            पाणी फाउंडेशन
+          </button>
         </div>
-        <hr class="w-75 hrline" />
+      </div>
+      <hr class="w-75 hrline" />
 
-        <!-- Upkram -->
-        <div class="container-fluid btnvertical">
-          <h1
-            class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
-            id="upkram"
-          >
-            उपक्रम व प्रकल्प
-          </h1>
-          <div class="button-container">
-            <button
-              type="button"
-              class="btn btncustomise btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#upkram1"
-              onclick="toggleUpkramURL('https://glcbc.org.au/prodimages/committee-members.jpg','उपक्रम १')"
-            >
-              उपक्रम १
-            </button>
-            <button
-              type="button"
-              class="btn btncustomise btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#upkram1"
-              onclick="toggleUpkramURL('https://glcbc.org.au/prodimages/committee-members.jpg','उपक्रम २')"
-            >
-              उपक्रम २
-            </button>
-            <button
-              type="button"
-              class="btn btncustomise btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#upkram1"
-              onclick="toggleUpkramURL('https://glcbc.org.au/prodimages/committee-members.jpg','उपक्रम १')"
-            >
-              उपक्रम १
-            </button>
-            <button
-              type="button"
-              class="btn btncustomise btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#upkram1"
-              onclick="toggleUpkramURL('https://glcbc.org.au/prodimages/committee-members.jpg','उपक्रम २')"
-            >
-              उपक्रम २
-            </button>
-            <button
-              type="button"
-              class="btn btncustomise btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#upkram1"
-              onclick="toggleUpkramURL('https://glcbc.org.au/prodimages/committee-members.jpg','उपक्रम ३')"
-            >
-              उपक्रम ३
-            </button>
-          </div>
+      <!-- Upkram -->
+      <div class="container-fluid btnvertical">
+        <h1 class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
+          id="upkram">
+          उपक्रम व प्रकल्प
+        </h1>
+        <div class="button-container">
+          <button type="button" class="btn btncustomise btn-primary" data-bs-toggle="modal" data-bs-target="#upkram1"
+            onclick="toggleUpkramURL('https://glcbc.org.au/prodimages/committee-members.jpg','उपक्रम १')">
+            उपक्रम १
+          </button>
+          <button type="button" class="btn btncustomise btn-primary" data-bs-toggle="modal" data-bs-target="#upkram1"
+            onclick="toggleUpkramURL('https://glcbc.org.au/prodimages/committee-members.jpg','उपक्रम २')">
+            उपक्रम २
+          </button>
+          <button type="button" class="btn btncustomise btn-primary" data-bs-toggle="modal" data-bs-target="#upkram1"
+            onclick="toggleUpkramURL('https://glcbc.org.au/prodimages/committee-members.jpg','उपक्रम १')">
+            उपक्रम १
+          </button>
+          <button type="button" class="btn btncustomise btn-primary" data-bs-toggle="modal" data-bs-target="#upkram1"
+            onclick="toggleUpkramURL('https://glcbc.org.au/prodimages/committee-members.jpg','उपक्रम २')">
+            उपक्रम २
+          </button>
+          <button type="button" class="btn btncustomise btn-primary" data-bs-toggle="modal" data-bs-target="#upkram1"
+            onclick="toggleUpkramURL('https://glcbc.org.au/prodimages/committee-members.jpg','उपक्रम ३')">
+            उपक्रम ३
+          </button>
         </div>
-        <hr class="w-75 hrline" />
+      </div>
+      <hr class="w-75 hrline" />
 
-        <!-- Bachat gat -->
-        <div class="container-fluid btnvertical">
-          <h1
-            class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
-            id="bachat"
-          >
-            बचत गट
-          </h1>
-          <div class="button-container">
-            <button type="button" class="btn btncustomise btn-primary">
-              <a
-                href="https://drive.google.com/file/d/1Qs19JFxZhBhaTG6rfJSQkFUo_88qyPIW/view"
-                target="_blank"
-                >क्रांतीज्योती सावित्रीबाई फुले बचत गट</a
-              ></button
-            ><button type="button" class="btn btncustomise btn-primary">
-              <a
-                href="https://drive.google.com/file/d/1XLYr-rW7jyeZJ4M-wtE_J6tCAjUlAPcG/view"
-                target="_blank"
-              >
-                नालंदा स्वयं सहायता महिला बचत गट</a
-              ></button
-            ><button type="button" class="btn btncustomise btn-primary">
-              <a
-                href="https://drive.google.com/file/d/1XLYr-rW7jyeZJ4M-wtE_J6tCAjUlAPcG/view"
-                target="_blank"
-                >आदर्श स्वयं सहायता महिला बचत गट</a
-              >
-            </button>
-            <button type="button" class="btn btncustomise btn-primary">
-              <a
-                href="https://drive.google.com/file/d/1Qs19JFxZhBhaTG6rfJSQkFUo_88qyPIW/view"
-                target="_blank"
-                >क्रांतीज्योती सावित्रीबाई फुले बचत गट</a
-              ></button
-            ><button type="button" class="btn btncustomise btn-primary">
-              <a
-                href="https://drive.google.com/file/d/1XLYr-rW7jyeZJ4M-wtE_J6tCAjUlAPcG/view"
-                target="_blank"
-                >नालंदा स्वयं सहायता महिला बचत गट</a
-              >
-            </button>
+      <!-- Bachat gat -->
+      <div class="container-fluid btnvertical">
+        <h1 class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
+          id="bachat">
+          बचत गट
+        </h1>
+        <div class="button-container">
+          <button type="button" class="btn btncustomise btn-primary">
+            <a href="https://drive.google.com/file/d/1Qs19JFxZhBhaTG6rfJSQkFUo_88qyPIW/view"
+              target="_blank">क्रांतीज्योती सावित्रीबाई फुले बचत गट</a></button><button type="button"
+            class="btn btncustomise btn-primary">
+            <a href="https://drive.google.com/file/d/1XLYr-rW7jyeZJ4M-wtE_J6tCAjUlAPcG/view" target="_blank">
+              नालंदा स्वयं सहायता महिला बचत गट</a></button><button type="button" class="btn btncustomise btn-primary">
+            <a href="https://drive.google.com/file/d/1XLYr-rW7jyeZJ4M-wtE_J6tCAjUlAPcG/view" target="_blank">आदर्श स्वयं
+              सहायता महिला बचत गट</a>
+          </button>
+          <button type="button" class="btn btncustomise btn-primary">
+            <a href="https://drive.google.com/file/d/1Qs19JFxZhBhaTG6rfJSQkFUo_88qyPIW/view"
+              target="_blank">क्रांतीज्योती सावित्रीबाई फुले बचत गट</a></button><button type="button"
+            class="btn btncustomise btn-primary">
+            <a href="https://drive.google.com/file/d/1XLYr-rW7jyeZJ4M-wtE_J6tCAjUlAPcG/view" target="_blank">नालंदा
+              स्वयं सहायता महिला बचत गट</a>
+          </button>
         </div>
+      </div>
         <hr class="w-75 hrline" />
 
         <!-- Ahwal -->
         <div class="container-fluid btnvertical">
-          <h1
-            class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
-            id="ahwal"
-          >
+          <h1 class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
+            id="ahwal">
             अहवाल
           </h1>
           <div class="button-container">
             <button type="button" class="btn btncustomise btn-primary">
-              <a
-                href="https://docs.google.com/spreadsheets/d/1o9HsFe_TYCsyKMbJ3Wdd61tRON0C9r0x/edit"
-                target="_blank"
-              >
-                वसुली अहवाल</a
-              ></button
-            ><button type="button" class="btn btncustomise btn-primary">
-              <a
-                href="https://drive.google.com/file/d/18P47Lbw1BWnf2Qn9P5qSSoyAM7b74-6j/view?usp=sharing"
-                target="_blank"
-              >
-                शौचालय यादी</a
-              ></button
-            ><button type="button" class="btn btncustomise btn-primary">
-              <a
-                href="https://docs.google.com/spreadsheets/d/1o9HsFe_TYCsyKMbJ3Wdd61tRON0C9r0x/edit"
-                target="_blank"
-              >
-                घरकुल योजना</a
-              >
+              <a href="https://docs.google.com/spreadsheets/d/1o9HsFe_TYCsyKMbJ3Wdd61tRON0C9r0x/edit" target="_blank">
+                वसुली अहवाल</a></button><button type="button" class="btn btncustomise btn-primary">
+              <a href="https://drive.google.com/file/d/18P47Lbw1BWnf2Qn9P5qSSoyAM7b74-6j/view?usp=sharing"
+                target="_blank">
+                शौचालय यादी</a></button><button type="button" class="btn btncustomise btn-primary">
+              <a href="https://docs.google.com/spreadsheets/d/1o9HsFe_TYCsyKMbJ3Wdd61tRON0C9r0x/edit" target="_blank">
+                घरकुल योजना</a>
             </button>
             <button type="button" class="btn btncustomise btn-primary">
-              <a
-                href="https://docs.google.com/spreadsheets/d/1o9HsFe_TYCsyKMbJ3Wdd61tRON0C9r0x/edit"
-                target="_blank"
-              >
-                नल धरकाची यादी</a
-              ></button
-            ><button type="button" class="btn btncustomise btn-primary">
-              <a
-                href="https://drive.google.com/file/d/18P47Lbw1BWnf2Qn9P5qSSoyAM7b74-6j/view?usp=sharing"
-                target="_blank"
-              >
-                PM आवास</a
-              >
+              <a href="https://docs.google.com/spreadsheets/d/1o9HsFe_TYCsyKMbJ3Wdd61tRON0C9r0x/edit" target="_blank">
+                नल धरकाची यादी</a></button><button type="button" class="btn btncustomise btn-primary">
+              <a href="https://drive.google.com/file/d/18P47Lbw1BWnf2Qn9P5qSSoyAM7b74-6j/view?usp=sharing"
+                target="_blank">
+                PM आवास</a>
             </button>
           </div>
         </div>
         <hr class="w-75 hrline" />
-      </span>
-      <!-- Complaint List for admin -->
-      <div class="container-fluid btnvertical" id="takrarlist">
-        <h1
-          class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7 poppins-regular"
-        >
-          तक्रारी
-        </h1>
-        <div class="complaint_container">
-          <div class="list-group poppins-regular" id="complaintList"></div>
-        </div>
-      </div>
-      <!-- <hr class="w-75 hrline" /> -->
     </span>
+    <!-- Complaint List for admin -->
+    <div class="container-fluid btnvertical" id="takrarlist">
+      <h1
+        class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7 poppins-regular">
+        तक्रारी
+      </h1>
+      <div class="complaint_container">
+        <div class="list-group poppins-regular" id="complaintList"></div>
+      </div>
+    </div>
+    <!-- <hr class="w-75 hrline" /> -->
+  </span>
 
-    <hr />
+  <hr />
 
-    <!-- Modals -->
-    <span>
-      <!-- Login Modal -->
-      <div class="modal fade" id="loginModal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 poppins-regular">लॉगिन</h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body poppins-regular">
-              <form id="loginCredentials">
-                <!-- <div class="mb-3">
+  <!-- Modals -->
+  <span>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular">लॉगिन</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body poppins-regular">
+            <form id="loginCredentials">
+              <!-- <div class="mb-3">
                   <label for="email" class="form-label">ईमेल पत्ता</label>
                   <input
                     type="email"
@@ -773,747 +507,454 @@
                     required
                   />
                 </div> -->
-                <div class="mb-3">
-                  <label for="password" class="form-label">पासवर्ड</label>
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="कृपया पासवर्ड टाका"
-                    id="password"
-                    required
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary">लॉगिन करा</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unlock Modal -->
-      <div class="modal fade" id="unlockModal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1
-                class="modal-title fs-5 poppins-regular"
-                id="exampleModalLabel"
-              >
-                कृपया अनलॉक कोड एंटर करा
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body poppins-regular">
-              <form id="unlockCredentials">
-                <div class="mb-3">
-                  <label for="password" class="form-label">अनलॉक पासवर्ड</label>
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="कृपया अनलॉक पासवर्ड टाका"
-                    id="unlock_password"
-                    required
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary">
-                  कुलूप उघडा
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Complaint Modal -->
-      <div class="modal fade" id="complaint" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1
-                class="modal-title fs-5 poppins-regular"
-                id="exampleModalLabel"
-              >
-                तक्रार माहिती
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form id="complaintForm">
-                <div class="mb-3">
-                  <label for="user_name" class="form-label poppins-regular"
-                    >नाव</label
-                  >
-                  <input
-                    class="form-control"
-                    type="text"
-                    id="user_name"
-                    name="user_name"
-                    placeholder="कृपया तुमचे नाव प्रविष्ट करा"
-                    aria-label="कृपया तुमचे नाव प्रविष्ट करा"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="mobile_number" class="form-label poppins-regular"
-                    >मोबाईल नंबर</label
-                  >
-                  <input
-                    class="form-control"
-                    type="number"
-                    id="mobile_number"
-                    name="mobile_number"
-                    placeholder="कृपया तुमचा मोबाईल नंबर एंटर करा"
-                    aria-label="कृपया तुमचा मोबाईल नंबर एंटर करा"
-                    required
-                  />
-                </div>
-
-                <div class="mb-3">
-                  <label for="details" class="form-label poppins-regular"
-                    >विस्तृत तक्रार</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="details"
-                    name="details"
-                    placeholder="कृपया तुमच्या तक्रारीची माहिती भरा"
-                    rows="3"
-                    required
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  id="complaintSubmit"
-                  class="btn btn-primary"
-                >
-                  सबमिट करा
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Resolution Modal -->
-      <div class="modal fade" id="resolutionmodal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 poppins-regular">तक्रार माहिती</h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form id="resolutionForm">
-                <div class="mb-3">
-                  <label for="name" class="form-label poppins-regular"
-                    >नाव</label
-                  >
-                  <input
-                    class="form-control bg-dark-subtle"
-                    type="text"
-                    id="name"
-                    placeholder="कृपया तुमचे नाव प्रविष्ट करा"
-                    aria-label="कृपया तुमचे नाव प्रविष्ट करा"
-                    readonly
-                  />
-                </div>
-                <div class="mb-3">
-                  <input
-                    class="form-control bg-dark-subtle"
-                    type="text"
-                    id="holdId"
-                    placeholder=""
-                    aria-label=""
-                    hidden
-                  />
-                </div>
-
-                <div class="mb-3">
-                  <label for="mobile" class="form-label poppins-regular"
-                    >मोबाईल नंबर</label
-                  >
-                  <input
-                    class="form-control bg-dark-subtle"
-                    type="number"
-                    id="mobile"
-                    placeholder="कृपया तुमचा मोबाईल नंबर एंटर करा"
-                    aria-label="कृपया तुमचा मोबाईल नंबर एंटर करा"
-                    readonly
-                  />
-                </div>
-
-                <div class="mb-3">
-                  <label for="details1" class="form-label poppins-regular"
-                    >विस्तृत तक्रार</label
-                  >
-                  <textarea
-                    class="form-control bg-dark-subtle"
-                    id="details1"
-                    placeholder="कृपया तुमच्या तक्रारीची माहिती भरा"
-                    rows="3"
-                    readonly
-                  ></textarea>
-                </div>
-
-                <div class="mb-3">
-                  <label for="solution" class="form-label poppins-regular"
-                    >तक्रार निवारण</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="solution"
-                    placeholder="कृपया समस्येचे निराकरण करा."
-                    rows="3"
-                    required
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  id="resolutionUpdateButton"
-                  class="btn btn-primary"
-                >
-                  अपडेट करा
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Complaint status -->
-      <div class="modal fade" id="complaintSearchModal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 poppins-regular">
-                <!-- id="exampleModalLabel" -->
-                तक्रार स्थिती माहिती करा
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <p class="text-danger">कृपया खालीलपैकी कोणतेही एक प्रविष्ट करा</p>
-              <form id="complaintSearchForm">
-                <div class="mb-3">
-                  <label for="name_search" class="form-label poppins-regular"
-                    >नाव</label
-                  >
-                  <input
-                    class="form-control"
-                    type="text"
-                    id="name_search"
-                    placeholder="कृपया तुमचे नाव प्रविष्ट करा"
-                    aria-label="कृपया तुमचे नाव प्रविष्ट करा"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="id_search" class="form-label poppins-regular"
-                    >तक्रार रेफरन्स क्रमांक</label
-                  >
-                  <input
-                    class="form-control"
-                    type="number"
-                    id="id_search"
-                    placeholder="तुमचा तक्रार रेफरन्स क्रमांक प्रविष्ट करा"
-                    aria-label=""
-                  />
-                </div>
-
-                <div class="mb-3">
-                  <label for="mobile_search" class="form-label poppins-regular"
-                    >मोबाईल नंबर</label
-                  >
-                  <input
-                    class="form-control"
-                    type="number"
-                    id="mobile_search"
-                    placeholder="कृपया तुमचा मोबाईल नंबर एंटर करा"
-                    aria-label="कृपया तुमचा मोबाईल नंबर एंटर करा"
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary">तपासा</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Complaint Status Details Modal -->
-      <!-- <div class="modal fade" id="complaintStatusModal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 poppins-regular">तक्रार माहिती</h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form id="publicComplaintForm">
-                <div class="mb-3">
-                  <label
-                    for="complaintStatus_name"
-                    class="form-label poppins-regular"
-                    >नाव</label
-                  >
-                  <input
-                    class="form-control bg-dark-subtle"
-                    type="text"
-                    id="complaintStatus_name"
-                    placeholder="कृपया तुमचे नाव प्रविष्ट करा"
-                    aria-label="कृपया तुमचे नाव प्रविष्ट करा"
-                    readonly
-                  />
-                </div>
-
-                <div class="mb-3">
-                  <label
-                    for="complaintStatus_mobile"
-                    class="form-label poppins-regular"
-                    >मोबाईल नंबर</label
-                  >
-                  <input
-                    class="form-control bg-dark-subtle"
-                    type="number"
-                    id="complaintStatus_mobile"
-                    placeholder="कृपया तुमचा मोबाईल नंबर एंटर करा"
-                    aria-label="कृपया तुमचा मोबाईल नंबर एंटर करा"
-                    readonly
-                  />
-                </div>
-
-                <div class="mb-3">
-                  <label
-                    for="complaintStatus_details"
-                    class="form-label poppins-regular"
-                    >विस्तृत तक्रार</label
-                  >
-                  <textarea
-                    class="form-control bg-dark-subtle"
-                    id="complaintStatus_details"
-                    placeholder="कृपया तुमच्या तक्रारीची माहिती भरा"
-                    rows="3"
-                    readonly
-                  ></textarea>
-                </div>
-
-                <div class="mb-3">
-                  <label
-                    for="complaintStatus_solution"
-                    class="form-label poppins-regular"
-                    >तक्रार निवारण</label
-                  >
-                  <textarea
-                    class="form-control bg-dark-subtle"
-                    id="complaintStatus_solution"
-                    placeholder="समस्येचे निराकरण करा."
-                    rows="3"
-                    readonly
-                  ></textarea>
-                </div>
-
-               <button type="submit" class="btn btn-primary">Ok</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- house number input tax Modal -->
-      <div class="modal fade" id="houseModal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 poppins-regular">
-                घर क्रमांक वापरून कर शोधा
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body poppins-regular">
-              <form id="houseNumberForm">
-                <div class="mb-3">
-                  <label for="houseNumber" class="form-label">घर क्रमांक</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="कृपया घराचा क्रमांक प्रविष्ट करा"
-                    id="houseNumber"
-                    required
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary">शोधा</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tax Detail Modal -->
-      <div class="modal fade" id="taxDetailModal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 poppins-regular">
-                कर माहिती : २०२५-२६
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body poppins-regular">
-              <div class="table-responsive">
-                <table
-                  class="table table-bordered text-center align-middle table-sm"
-                >
-                  <thead>
-                    <tr>
-                      <th colspan="2">अ.क्र</th>
-                      <th colspan="2">मकान धारकाचे नाव</th>
-                    </tr>
-                  </thead>
-                  <tbody class="table-group-divider">
-                    <tr>
-                      <td colspan="2" id="houseNumber">1</td>
-                      <td id="ownerName">श्री अंकुश शंकरराव रहाटे</td>
-                      <td>एकुन</td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">मकान कर</td>
-                      <td>मागील</td>
-                      <td id="houseTaxPending">0</td>
-                      <td rowspan="2" id="houseTaxTotal">1314</td>
-                    </tr>
-                    <tr>
-                      <td>चालु</td>
-                      <td id="houseTaxCurrent">1314</td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">दिवा कर</td>
-                      <td>मागील</td>
-                      <td id="divaTaxPending">0</td>
-                      <td rowspan="2" id="divaTaxTotal">60</td>
-                    </tr>
-                    <tr>
-                      <td>चालु</td>
-                      <td id="divaTaxCurrent">60</td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">आरोग्य कर</td>
-                      <td>मागील</td>
-                      <td id="arogyaTaxPending">0</td>
-                      <td rowspan="2" id="arogyaTaxTotal">60</td>
-                    </tr>
-                    <tr>
-                      <td>चालु</td>
-                      <td id="arogyaTaxCurrent">60</td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">पाणी कर</td>
-                      <td>मागील</td>
-                      <td id="paaniTaxPending">0</td>
-                      <td rowspan="2" id="paaniTaxTotal">0</td>
-                    </tr>
-                    <tr>
-                      <td>चालु</td>
-                      <td id="paaniTaxCurrent">0</td>
-                    </tr>
-                    <tr>
-                      <td colspan="3">एकुन कर</td>
-                      <td id="totalTax">1434</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="mb-3">
+                <label for="password" class="form-label">पासवर्ड</label>
+                <input type="password" class="form-control" placeholder="कृपया पासवर्ड टाका" id="password" required />
               </div>
-              <div id="paymentQR_container">
-                <p class="text-danger">
-                  कृपया या QR वर पेमेंट करा किंवा कर भरण्याच्या बटणावर क्लिक करा
-                  आणि पेमेंटचा स्क्रीनशॉट १२३४५६७८९० या मोबाईल नंबरवर व्हॉट्सअप
-                  करा
-                </p>
-                <span id="PaymentQR">
-                  <!-- src="https://drive.google.com/file/d/1gD36a_G_-NvXmoO2jtxSZodWOhAEiVGY/preview" -->
-                  <iframe
-                    src="https://quickchart.io/qr?text=upi%3A%2F%2Fpay%3Fpn%3DYogesh%26pa%3Dhavefun%40axisb%26am%3D10&size=160"
-                    id="qrImage"
-                    allow="autoplay"
-                    title="Payment QR"
-                  ></iframe>
-                </span>
+              <button type="submit" class="btn btn-primary">लॉगिन करा</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unlock Modal -->
+    <div class="modal fade" id="unlockModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular">
+              कृपया अनलॉक कोड एंटर करा
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body poppins-regular">
+            <form id="unlockCredentials">
+              <div class="mb-3">
+                <label for="password" class="form-label">अनलॉक पासवर्ड</label>
+                <input type="password" class="form-control" placeholder="कृपया अनलॉक पासवर्ड टाका" id="unlock_password"
+                  required />
               </div>
-              <div class="d-flex justify-content-center">
-                <a id="paymentButton" href="">
-                  <button type="button" class="btn btn-success">
-                    कर भरा
-                  </button></a
-                >
+              <button type="submit" class="btn btn-primary">
+                कुलूप उघडा
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Complaint Modal -->
+    <div class="modal fade" id="complaint" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular" id="exampleModalLabel">
+              तक्रार माहिती
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="complaintForm">
+              <div class="mb-3">
+                <label for="user_name" class="form-label poppins-regular">नाव</label>
+                <input class="form-control" type="text" id="user_name" name="user_name"
+                  placeholder="कृपया तुमचे नाव प्रविष्ट करा" aria-label="कृपया तुमचे नाव प्रविष्ट करा" required />
               </div>
+              <div class="mb-3">
+                <label for="mobile_number" class="form-label poppins-regular">मोबाईल नंबर</label>
+                <input class="form-control" type="number" id="mobile_number" name="mobile_number"
+                  placeholder="कृपया तुमचा मोबाईल नंबर एंटर करा" aria-label="कृपया तुमचा मोबाईल नंबर एंटर करा"
+                  required />
+              </div>
+
+              <div class="mb-3">
+                <label for="details" class="form-label poppins-regular">विस्तृत तक्रार</label>
+                <textarea class="form-control" id="details" name="details"
+                  placeholder="कृपया तुमच्या तक्रारीची माहिती भरा" rows="3" required></textarea>
+              </div>
+
+              <button type="submit" id="complaintSubmit" class="btn btn-primary">
+                सबमिट करा
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resolution Modal -->
+    <div class="modal fade" id="resolutionmodal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular">तक्रार माहिती</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="resolutionForm">
+              <div class="mb-3">
+                <label for="name" class="form-label poppins-regular">नाव</label>
+                <input class="form-control bg-dark-subtle" type="text" id="name"
+                  placeholder="कृपया तुमचे नाव प्रविष्ट करा" aria-label="कृपया तुमचे नाव प्रविष्ट करा" readonly />
+              </div>
+              <div class="mb-3">
+                <input class="form-control bg-dark-subtle" type="text" id="holdId" placeholder="" aria-label=""
+                  hidden />
+              </div>
+
+              <div class="mb-3">
+                <label for="mobile" class="form-label poppins-regular">मोबाईल नंबर</label>
+                <input class="form-control bg-dark-subtle" type="number" id="mobile"
+                  placeholder="कृपया तुमचा मोबाईल नंबर एंटर करा" aria-label="कृपया तुमचा मोबाईल नंबर एंटर करा"
+                  readonly />
+              </div>
+
+              <div class="mb-3">
+                <label for="details1" class="form-label poppins-regular">विस्तृत तक्रार</label>
+                <textarea class="form-control bg-dark-subtle" id="details1"
+                  placeholder="कृपया तुमच्या तक्रारीची माहिती भरा" rows="3" readonly></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="solution" class="form-label poppins-regular">तक्रार निवारण</label>
+                <textarea class="form-control" id="solution" placeholder="कृपया समस्येचे निराकरण करा." rows="3"
+                  required></textarea>
+              </div>
+
+              <button type="submit" id="resolutionUpdateButton" class="btn btn-primary">
+                अपडेट करा
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Complaint status -->
+    <div class="modal fade" id="complaintSearchModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular">
+              <!-- id="exampleModalLabel" -->
+              तक्रार स्थिती माहिती करा
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-danger">कृपया खालीलपैकी कोणतेही एक प्रविष्ट करा</p>
+            <form id="complaintSearchForm">
+              <div class="mb-3">
+                <label for="name_search" class="form-label poppins-regular">नाव</label>
+                <input class="form-control" type="text" id="name_search" placeholder="कृपया तुमचे नाव प्रविष्ट करा"
+                  aria-label="कृपया तुमचे नाव प्रविष्ट करा" />
+              </div>
+              <div class="mb-3">
+                <label for="id_search" class="form-label poppins-regular">तक्रार रेफरन्स क्रमांक</label>
+                <input class="form-control" type="number" id="id_search"
+                  placeholder="तुमचा तक्रार रेफरन्स क्रमांक प्रविष्ट करा" aria-label="" />
+              </div>
+
+              <div class="mb-3">
+                <label for="mobile_search" class="form-label poppins-regular">मोबाईल नंबर</label>
+                <input class="form-control" type="number" id="mobile_search"
+                  placeholder="कृपया तुमचा मोबाईल नंबर एंटर करा" aria-label="कृपया तुमचा मोबाईल नंबर एंटर करा" />
+              </div>
+              <button type="submit" class="btn btn-primary">तपासा</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- house number input tax Modal -->
+    <div class="modal fade" id="houseModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular">
+              घर क्रमांक वापरून कर शोधा
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body poppins-regular">
+            <form id="houseNumberForm">
+              <div class="mb-3">
+                <label for="houseNumber" class="form-label">घर क्रमांक</label>
+                <input type="text" class="form-control" placeholder="कृपया घराचा क्रमांक प्रविष्ट करा" id="houseNumber"
+                  required />
+              </div>
+              <button type="submit" class="btn btn-primary">शोधा</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tax Detail Modal -->
+    <div class="modal fade" id="taxDetailModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular">
+              कर माहिती : २०२५-२६
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body poppins-regular">
+            <div class="table-responsive">
+              <table class="table table-bordered text-center align-middle table-sm">
+                <thead>
+                  <tr>
+                    <th colspan="2">अ.क्र</th>
+                    <th colspan="2">मकान धारकाचे नाव</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                  <tr>
+                    <td colspan="2" id="houseNumber">1</td>
+                    <td id="ownerName">श्री अंकुश शंकरराव रहाटे</td>
+                    <td>एकुन</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">मकान कर</td>
+                    <td>मागील</td>
+                    <td id="houseTaxPending">0</td>
+                    <td rowspan="2" id="houseTaxTotal">1314</td>
+                  </tr>
+                  <tr>
+                    <td>चालु</td>
+                    <td id="houseTaxCurrent">1314</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">दिवा कर</td>
+                    <td>मागील</td>
+                    <td id="divaTaxPending">0</td>
+                    <td rowspan="2" id="divaTaxTotal">60</td>
+                  </tr>
+                  <tr>
+                    <td>चालु</td>
+                    <td id="divaTaxCurrent">60</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">आरोग्य कर</td>
+                    <td>मागील</td>
+                    <td id="arogyaTaxPending">0</td>
+                    <td rowspan="2" id="arogyaTaxTotal">60</td>
+                  </tr>
+                  <tr>
+                    <td>चालु</td>
+                    <td id="arogyaTaxCurrent">60</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">पाणी कर</td>
+                    <td>मागील</td>
+                    <td id="paaniTaxPending">0</td>
+                    <td rowspan="2" id="paaniTaxTotal">0</td>
+                  </tr>
+                  <tr>
+                    <td>चालु</td>
+                    <td id="paaniTaxCurrent">0</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">एकुन कर</td>
+                    <td id="totalTax">1434</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="paymentQR_container">
+              <p class="text-danger">
+                कृपया या QR वर पेमेंट करा किंवा कर भरण्याच्या बटणावर क्लिक करा
+                आणि पेमेंटचा स्क्रीनशॉट १२३४५६७८९० या मोबाईल नंबरवर व्हॉट्सअप
+                करा
+              </p>
+              <span id="PaymentQR">
+                <!-- src="https://drive.google.com/file/d/1gD36a_G_-NvXmoO2jtxSZodWOhAEiVGY/preview" -->
+                <iframe
+                  src="https://quickchart.io/qr?text=upi%3A%2F%2Fpay%3Fpn%3DYogesh%26pa%3Dhavefun%40axisb%26am%3D10&size=160"
+                  id="qrImage" allow="autoplay" title="Payment QR"></iframe>
+              </span>
+            </div>
+            <div class="d-flex justify-content-center">
+              <a id="paymentButton" href="">
+                <button type="button" class="btn btn-success">
+                  कर भरा
+                </button></a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Sarpanch Info -->
-      <div class="modal fade" id="exampleModal3" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1
-                class="modal-title fs-5 poppins-regular"
-                id="exampleModalLabel"
-              >
-                सरपंच माहिती
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              सरपंच हा भारतातील ग्रामीण स्थानिक स्वराज्य संस्थेच्या सर्वात लहान
-              घटक असलेल्या ग्रामपंचायतीचा निवडून आलेला प्रमुख असतो. गावपातळीवरील
-              बैठकांचे अध्यक्ष म्हणून, सरपंच स्वच्छता, शिक्षण आणि पायाभूत
-              सुविधांच्या विकास प्रकल्पांच्या अंमलबजावणीवर देखरेख करतात आणि
-              गावातील समुदाय आणि सरकारी संस्थांमधील प्राथमिक संपर्क म्हणून काम
-              करतात. या भूमिकेत तळागाळातील लोकशाहीला चालना देणे, गावाचा
-              सर्वांगीण विकास आणि कल्याण सुनिश्चित करणे आणि गावकऱ्यांमधील वाद
-              सोडवणे समाविष्ट आहे.
-            </div>
+    <!-- Sarpanch Info -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular" id="exampleModalLabel">
+              सरपंच माहिती
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            सरपंच हा भारतातील ग्रामीण स्थानिक स्वराज्य संस्थेच्या सर्वात लहान
+            घटक असलेल्या ग्रामपंचायतीचा निवडून आलेला प्रमुख असतो. गावपातळीवरील
+            बैठकांचे अध्यक्ष म्हणून, सरपंच स्वच्छता, शिक्षण आणि पायाभूत
+            सुविधांच्या विकास प्रकल्पांच्या अंमलबजावणीवर देखरेख करतात आणि
+            गावातील समुदाय आणि सरकारी संस्थांमधील प्राथमिक संपर्क म्हणून काम
+            करतात. या भूमिकेत तळागाळातील लोकशाहीला चालना देणे, गावाचा
+            सर्वांगीण विकास आणि कल्याण सुनिश्चित करणे आणि गावकऱ्यांमधील वाद
+            सोडवणे समाविष्ट आहे.
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Sachiv Info -->
-      <div class="modal fade" id="exampleModal4" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1
-                class="modal-title fs-5 poppins-regular"
-                id="exampleModalLabel"
-              >
-                सचिव माहिती
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              ग्रामपंचायत सचिव हा सरकारने नियुक्त केलेला प्रशासकीय अधिकारी असतो
-              जो ग्रामसभा आणि ग्रामपंचायतीचा सचिव म्हणून काम करतो, तो रेकॉर्ड
-              ठेवणे, प्रशासकीय कामे व्यवस्थापित करणे, सरकारी योजना राबविणे आणि
-              गाव पातळीवर विकासात्मक कार्यक्रम राबविणे यासाठी जबाबदार असतो.
-              सरपंच आणि प्रभाग सदस्यांप्रमाणे सचिव हा ग्रामपंचायतीचा निवडून न
-              आलेला सदस्य असतो.
-            </div>
+    <!-- Sachiv Info -->
+    <div class="modal fade" id="exampleModal4" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular" id="exampleModalLabel">
+              सचिव माहिती
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ग्रामपंचायत सचिव हा सरकारने नियुक्त केलेला प्रशासकीय अधिकारी असतो
+            जो ग्रामसभा आणि ग्रामपंचायतीचा सचिव म्हणून काम करतो, तो रेकॉर्ड
+            ठेवणे, प्रशासकीय कामे व्यवस्थापित करणे, सरकारी योजना राबविणे आणि
+            गाव पातळीवर विकासात्मक कार्यक्रम राबविणे यासाठी जबाबदार असतो.
+            सरपंच आणि प्रभाग सदस्यांप्रमाणे सचिव हा ग्रामपंचायतीचा निवडून न
+            आलेला सदस्य असतो.
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Puraskar -->
-      <div class="modal fade" id="puraskar" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 poppins-regular" id="puraskarLabel">
-                पुरस्कार
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="img_cover ratio ratio-4x3">
-                <!--<iframe
+    <!-- Puraskar -->
+    <div class="modal fade" id="puraskar" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular" id="puraskarLabel">
+              पुरस्कार
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="img_cover ratio ratio-4x3">
+              <!--<iframe
                   id="puraskarImage"
                   src="asset\images\trophy.webp"
                   allow="autoplay"
                   title="पुरस्कार प्रतिमा"
                 ></iframe> -->
-                <img
-                  id="puraskarImage"
-                  src="asset\images\trophy.webp"
-                  alt="पुरस्कार प्रतिमा"
-                />
-              </div>
+              <img id="puraskarImage" src="asset\images\trophy.webp" alt="पुरस्कार प्रतिमा" />
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Samiti1 -->
-      <div class="modal fade" id="samiti1" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 poppins-regular" id="samitiLabel">
-                समिती १
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="img_cover">
-                <img
-                  id="samitiImage"
-                  src="asset\images\samiti.png"
-                  alt="समिती प्रतिमा"
-                />
-              </div>
+    <!-- Samiti1 -->
+    <div class="modal fade" id="samiti1" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular" id="samitiLabel">
+              समिती १
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="img_cover">
+              <img id="samitiImage" src="asset\images\samiti.png" alt="समिती प्रतिमा" />
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Samiti2 -->
-      <div class="modal fade" id="samiti2" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">समिती २</h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="img_cover">
-                <img src="asset\images\samiti2.png" />
-              </div>
+    <!-- Samiti2 -->
+    <div class="modal fade" id="samiti2" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">समिती २</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="img_cover">
+              <img src="asset\images\samiti2.png" />
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Upkram1 -->
-      <div class="modal fade" id="upkram1" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 poppins-regular" id="upkramLabel">
-                उपक्रम १
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="img_cover">
-                <img
-                  id="upkramImage"
-                  src="asset\images\upkram1.jpg"
-                  alt="उपक्रम प्रतिमा"
-                />
-              </div>
+    <!-- Upkram1 -->
+    <div class="modal fade" id="upkram1" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular" id="upkramLabel">
+              उपक्रम १
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="img_cover">
+              <img id="upkramImage" src="asset\images\upkram1.jpg" alt="उपक्रम प्रतिमा" />
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Upkram2 -->
-      <div class="modal fade" id="upkram2" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">उपक्रम २</h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="img_cover">
-                <img src="asset\images\upkram2.jpg" />
-              </div>
+    <!-- Upkram2 -->
+    <div class="modal fade" id="upkram2" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">उपक्रम २</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="img_cover">
+              <img src="asset\images\upkram2.jpg" />
             </div>
           </div>
         </div>
       </div>
-    </span>
+    </div>
+  </span>
 
-    <!-- Social media icons -->
-    <!-- https://codepen.io/optimisticweb/pen/ByNYNQp -->
-    <div class="icon_bar container">
-      <ul class="social">
-        <li data-tooltip="Facebook" style="--bg: #2356f6">
-          <a
-            href="https://www.facebook.com/share/1Bked1vuu2/"
-            aria-label="Facebook"
-          >
-            <i class="fa fa-facebook"></i>
-          </a>
-        </li>
+  <!-- Social media icons -->
+  <!-- https://codepen.io/optimisticweb/pen/ByNYNQp -->
+  <div class="icon_bar container">
+    <ul class="social">
+      <li data-tooltip="Facebook" style="--bg: #2356f6">
+        <a href="https://www.facebook.com/share/1Bked1vuu2/" aria-label="Facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
 
-        <li data-tooltip="X" style="--bg: #101419">
-          <a href="https://x.com/?lang=en" target="_blank" aria-label="Twitter">
-            <i class="fa fa-twitter"></i>
-          </a>
-        </li>
+      <li data-tooltip="X" style="--bg: #101419">
+        <a href="https://x.com/?lang=en" target="_blank" aria-label="Twitter">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
 
-        <li data-tooltip="YouTube" style="--bg: #ff0000">
-          <a
-            href="https://youtube.com/@gppalasgaon-b5h?si=La7nQjsm1prlHHy5"
-            target="_blank"
-            aria-label="YouTube"
-          >
-            <i class="fa fa-youtube"></i>
-          </a>
-        </li>
+      <li data-tooltip="YouTube" style="--bg: #ff0000">
+        <a href="https://youtube.com/@gppalasgaon-b5h?si=La7nQjsm1prlHHy5" target="_blank" aria-label="YouTube">
+          <i class="fa fa-youtube"></i>
+        </a>
+      </li>
 
-        <li
-          data-tooltip="Instagram"
-          style="
+      <li data-tooltip="Instagram" style="
             --bg: linear-gradient(
               -45deg,
               #feda75,
@@ -1522,60 +963,42 @@
               #962fbf,
               #4f5bd5
             );
-          "
-        >
-          <a
-            href="https://www.instagram.com/gppalasgaonbai49?utm_source=qr&igsh=MXJ0NHlsaWd0eXNtaA=="
-            target="_blank"
-            aria-label="Instagram"
-          >
-            <i class="fa fa-instagram"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
+          ">
+        <a href="https://www.instagram.com/gppalasgaonbai49?utm_source=qr&igsh=MXJ0NHlsaWd0eXNtaA==" target="_blank"
+          aria-label="Instagram">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
 
-    <!-- Contact Details -->
-    <div class="d-flex justify-content-center mb-2">
-      <div class="contact_details">
-        <div
-          id="contact_information"
-          class="poppins-regular d-flex justify-content-center flex-column text-center align-items-center"
-        >
-          <p>ग्रामपंचायत चारमंडळ पं.स. सेलू, जि.प. वर्धा</p>
-          <p>जि.प. वर्धा पिन 442105</p>
-          <p>Mo. +91 7387755368</p>
-          <p>कार्यालय वेळ: सोमवार ते शुक्रवार</p>
-          <p>सकाळी ९ ते संध्याकाळी ६</p>
-        </div>
+  <!-- Contact Details -->
+  <div class="d-flex justify-content-center mb-2">
+    <div class="contact_details">
+      <div id="contact_information"
+        class="poppins-regular d-flex justify-content-center flex-column text-center align-items-center">
+        <p>ग्रामपंचायत चारमंडळ पं.स. सेलू, जि.प. वर्धा</p>
+        <p>जि.प. वर्धा पिन 442105</p>
+        <p>Mo. +91 7387755368</p>
+        <p>कार्यालय वेळ: सोमवार ते शुक्रवार</p>
+        <p>सकाळी ९ ते संध्याकाळी ६</p>
       </div>
     </div>
+  </div>
 
-    <div>
-      <a data-bs-toggle="modal" data-bs-target="#unlockModal" href="#"
-        ><span class="display-1 fw-bold" id="locker"
-          >LOCKED &nbsp;<i class="fa fa-lock" id="lock"></i></span
-      ></a>
-    </div>
+  <div>
+    <a data-bs-toggle="modal" data-bs-target="#unlockModal" href="#"><span class="display-1 fw-bold" id="locker">LOCKED
+        &nbsp;<i class="fa fa-lock" id="lock"></i></span></a>
+  </div>
 
-    <!-- watermark locked -->
-    <div>
-      <span class="display-1 fw-bold" id="locker_watermark"
-        >LOCKED &nbsp;<i class="fa fa-lock" id="lock"></i
-      ></span>
-    </div>
+  <!-- watermark locked -->
+  <div>
+    <span class="display-1 fw-bold" id="locker_watermark">LOCKED &nbsp;<i class="fa fa-lock" id="lock"></i></span>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+  defer></script>
+<script src="index.js" defer></script>
 
-    <!-- <div style="padding: 1rem; position: absolute">
-      <button type="button" class="btn btn-dark" id="clearStorage">
-        Clear data
-      </button>
-    </div> -->
-  </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"
-    defer
-  ></script>
-  <script src="index.js" defer></script>
 </html>

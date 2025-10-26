@@ -1,5 +1,5 @@
 const API_URL =
-  "https://script.google.com/macros/s/AKfycbzFw5sYFwsHwalR0M9WNqDflqdHcU0WI7MvY0OD6OVUoEcpTvZxIQfawMZ1i8t_GvP8CQ/exec";
+  "https://script.google.com/macros/s/AKfycby1JwkVb2axItTr8rwQS2ZjvKL2BBpw7zyPDaGmpohXSn8IhX5KGapiSP530Rvyj82WTw/exec";
 // Grab references safely (some elements may not exist on every page)
 const $ = (id) => document.getElementById(id) || null;
 const elements = {
@@ -44,6 +44,7 @@ const elements = {
   paymentButton: $("paymentButton"),
   viewCount: $("viewCount"),
   viewcontainer: $("viewcontainer"),
+  locker: $("locker"),
 };
 
 // Cache Bootstrap modals
@@ -102,15 +103,15 @@ const toggleResolution = (uniqueID, type) => {
   const complaints =
     type == "general"
       ? JSON.parse(localStorage.getItem("complaintsList") || "[]").filter(
-          (complaint) => {
-            if (complaint.UniqueID === uniqueID) return complaint;
-          }
-        )
+        (complaint) => {
+          if (complaint.UniqueID === uniqueID) return complaint;
+        }
+      )
       : JSON.parse(localStorage.getItem("complaints") || "[]").filter(
-          (complaint) => {
-            if (complaint.UniqueID === uniqueID) return complaint;
-          }
-        );
+        (complaint) => {
+          if (complaint.UniqueID === uniqueID) return complaint;
+        }
+      );
 
   const complaint = complaints[0];
   if (complaint) {
@@ -134,7 +135,7 @@ const toggleResolution = (uniqueID, type) => {
   } else {
     console.log(
       "Error happened while searching for the complaint in localdatabase " +
-        uniqueID
+      uniqueID
     );
   }
 };
@@ -160,12 +161,12 @@ const fetchComplaints = async () => {
     const { secret, gpdata } = await response.json();
 
     localStorage.setItem("secret", secret);
-    const [complaintColumns, ...complaintData] = gpdata;
+    const { complaintColumns, complaintData } = gpdata;
+    const columns = complaintColumns[0];
     const complaints = complaintData.map((row) =>
-      row.reduce(
-        (obj, value, index) => ({ ...obj, [complaintColumns[index]]: value }),
-        {}
-      )
+      row.reduce((obj, value, index) => {
+        return { ...obj, [columns[index]]: value };
+      }, {})
     );
 
     localStorage.setItem("complaints", JSON.stringify(complaints));
@@ -184,14 +185,12 @@ const loadComplaints = () => {
   elements.complaintList.innerHTML = "";
   complaints.forEach((complaint, index) => {
     const a = document.createElement("a");
-    a.textContent = `${index + 1}. नाव: ${complaint.Name}, मोबाईल: ${
-      complaint["Mobile Number"]
-    }, तपशील: ${complaint.Details}, तारीख: ${complaint.Created.substring(
-      0,
-      10
-    )}${
-      complaint.Resolution ? `, तक्रार निवारण: ${complaint.Resolution}` : ""
-    }`;
+    a.textContent = `${index + 1}. नाव: ${complaint.Name}, मोबाईल: ${complaint["Mobile Number"]
+      }, तपशील: ${complaint.Details}, तारीख: ${complaint.Created.substring(
+        0,
+        10
+      )}${complaint.Resolution ? `, तक्रार निवारण: ${complaint.Resolution}` : ""
+      }`;
     a.href = "#";
     a.classList.add(
       "list-group-item",
@@ -233,20 +232,17 @@ const fetchComplaintStatus = async () => {
     );
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const rawComplaints = await response.json();
+    if (rawComplaints.complaintData.length > 0) {
+      const { complaintColumns, complaintData } = rawComplaints;
+      const columns = complaintColumns[0];
 
-    if (rawComplaints.length > 1) {
-      const [complaintColumns, ...complaintData] = rawComplaints;
       const complaintsList = complaintData.map((row) =>
-        row.reduce(
-          (obj, value, index) => ({ ...obj, [complaintColumns[index]]: value }),
-          {}
-        )
+        row.reduce((obj, value, index) => {
+          return { ...obj, [columns[index]]: value };
+        }, {})
       );
 
-      localStorage.setItem(
-        "complaint_columns",
-        JSON.stringify(complaintColumns)
-      );
+      localStorage.setItem("complaint_columns", JSON.stringify(complaintColumns));
       localStorage.setItem("complaintsList", JSON.stringify(complaintsList));
       elements.publicComplaintContainer.style.display = "block";
       loadPublicComplaints();
@@ -266,14 +262,12 @@ const loadPublicComplaints = () => {
   elements.complaintListPublic.innerHTML = "";
   complaints.forEach((complaint, index) => {
     const a = document.createElement("a");
-    a.textContent = `${index + 1}. नाव: ${complaint.Name}, मोबाईल: ${
-      complaint["Mobile Number"]
-    }, तपशील: ${complaint.Details}, तारीख: ${complaint.Created.substring(
-      0,
-      10
-    )}${
-      complaint.Resolution ? `, तक्रार निवारण: ${complaint.Resolution}` : ""
-    }`;
+    a.textContent = `${index + 1}. नाव: ${complaint.Name}, मोबाईल: ${complaint["Mobile Number"]
+      }, तपशील: ${complaint.Details}, तारीख: ${complaint.Created.substring(
+        0,
+        10
+      )}${complaint.Resolution ? `, तक्रार निवारण: ${complaint.Resolution}` : ""
+      }`;
     a.href = "#";
     a.classList.add(
       "list-group-item",
@@ -300,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
   elements.unlockForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const password = document.getElementById("unlock_password").value.trim();
-    if (password === "unLock098") {
+    if (password === "unlock890") {
       elements.locker.style.display = "none";
     } else {
       alert("Invalid Password");
@@ -447,6 +441,9 @@ document.addEventListener("DOMContentLoaded", () => {
   elements.loginCredentials.addEventListener("submit", async (e) => {
     e.preventDefault();
     const password = document.getElementById("password").value.trim();
+    toggleLoadingBanner("प्रवेश तपासत आहे");
+    elements.loginCredentials.reset();
+    modals.login.hide();
     const response = await fetch(
       `${API_URL}?Method=${encodeURIComponent(
         "getAdminToken"
@@ -461,15 +458,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "userSession",
         JSON.stringify({ userLoggedin: true })
       );
+      toggleLoadingBanner();
       sessionExpiration();
       fetchComplaints();
       toggleDisplays();
     } else {
       alert("Invalid Password");
     }
-
-    elements.loginCredentials.reset();
-    modals.login.hide();
   });
 
   // Session expiration
