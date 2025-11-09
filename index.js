@@ -1,8 +1,13 @@
 const API_URL =
-  "https://script.google.com/macros/s/AKfycby1JwkVb2axItTr8rwQS2ZjvKL2BBpw7zyPDaGmpohXSn8IhX5KGapiSP530Rvyj82WTw/exec";
+  "https://script.google.com/macros/s/AKfycbymYyhEjlfF7QZ2gDJIs5c_irKsu3OBMqOYSA-SJdj-OwZgsLPc0c4HylKYWrLxfWqy/exec";
 // Grab references safely (some elements may not exist on every page)
 const $ = (id) => document.getElementById(id) || null;
 const elements = {
+  todaysdate: $("todaysdate"),
+  wimage: $("wimage"),
+  temp: $("temp"),
+  sunrise: $("sunrise"),
+  sunset: $("sunset"),
   dynamicData: $("dynamicData"),
   samitiImage: $("samitiImage"),
   samitiLabel: $("samitiLabel"),
@@ -43,13 +48,12 @@ const elements = {
   resolutionUpdateButton: $("resolutionUpdateButton"),
   paymentButton: $("paymentButton"),
   viewCount: $("viewCount"),
-  viewcontainer: $("viewcontainer"),
   locker: $("locker"),
 };
 
 // Cache Bootstrap modals
 const modals = {
-  unlock: bootstrap.Modal.getOrCreateInstance(elements.unlockModal),
+  // unlock: bootstrap.Modal.getOrCreateInstance(elements.unlockModal),
   complaint: bootstrap.Modal.getOrCreateInstance(elements.complaintModal),
   resolution: bootstrap.Modal.getOrCreateInstance(elements.resolutionModal),
   complaintSearch: bootstrap.Modal.getOrCreateInstance(
@@ -140,15 +144,39 @@ const toggleResolution = (uniqueID, type) => {
   }
 };
 
+const weatherIconMap = {
+  "01d": "01d",
+  "01n": "01n",
+  "02d": "02d",
+  "02n": "02n",
+  "03d": "03",
+  "03n": "03",
+  "04d": "04",
+  "04n": "04",
+  "09d": "09",
+  "09n": "09",
+  "10d": "10d",
+  "10n": "10n",
+  "11d": "11",
+  "11n": "11",
+  "13d": "13",
+  "13n": "13",
+  "50d": "50",
+  "50n": "50",
+}
+
 //Get views count
-const getViews = async () => {
-  const response = await fetch(`${API_URL}?Method=getViews`);
-  let { Views } = await response.json();
+const getViewsAndWeather = async () => {
+  const response = await fetch(`${API_URL}?Method=getViewsAndWeather`);
+  let { Views, Weather } = await response.json();
   if (!response.ok)
     throw new Error(`Failed to fetch view count. Status: ${response.status}`);
-  // console.log("Current view count " + Views);
+  elements.todaysdate.innerText = Weather.dt;
+  elements.wimage.setAttribute("src", `asset/Weather/${weatherIconMap[Weather.icon]}.png`);
+  elements.temp.innerText = Weather.temp;
+  elements.sunrise.innerText = Weather.sunrise;
+  elements.sunset.innerText = Weather.sunset;
   elements.viewCount.innerText = Views;
-  elements.viewcontainer.style.display = "block";
 };
 
 // Fetch complaints for admin
@@ -200,7 +228,6 @@ const loadComplaints = () => {
       "col-2",
       "text-truncate"
     );
-    // a.id = complaint.UniqueID;
     let uniqueID = complaint.UniqueID;
     a.dataset.bsToggle = "modal";
     a.dataset.bsTarget = "#resolutionmodal";
@@ -291,17 +318,17 @@ const loadPublicComplaints = () => {
 // Event Listeners
 document.addEventListener("DOMContentLoaded", () => {
   // Unlock form
-  elements.unlockForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const password = document.getElementById("unlock_password").value.trim();
-    if (password === "unlock890") {
-      elements.locker.style.display = "none";
-    } else {
-      alert("Invalid Password");
-    }
-    elements.unlockForm.reset();
-    modals.unlock.hide();
-  });
+  // elements.unlockForm.addEventListener("submit", (e) => {
+  //   e.preventDefault();
+  //   const password = document.getElementById("unlock_password").value.trim();
+  //   if (password === "unlock890") {
+  //     elements.locker.style.display = "none";
+  //   } else {
+  //     alert("Invalid Password");
+  //   }
+  //   elements.unlockForm.reset();
+  //   modals.unlock.hide();
+  // });
 
   // Complaint form submission
   elements.complaintForm.addEventListener("submit", async (e) => {
@@ -480,7 +507,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Initial load
-  getViews();
+  getViewsAndWeather();
   loadComplaints();
   toggleDisplays();
 
