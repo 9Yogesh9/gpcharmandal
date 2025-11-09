@@ -258,10 +258,11 @@ a:active {
 
 /* Social icons */
 .social {
+  padding: 0px;
   display: flex;
   justify-content: center;
   flex-flow: wrap;
-  gap: 1rem;
+  gap: 0.6rem;
   list-style: none;
 }
 
