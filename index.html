@@ -131,17 +131,16 @@
     </h2>
   </div>
 
-  <!-- Suchna Falak -->
+  <!-- Suchna Falak/Notice Board -->
   <div class="borderImage p-3 m-3">
-    <div class="">
+    <div>
       <h2 style="text-align: center;" class="poppins-regular p-2">नोटीस बोर्ड</h2>
-      <ul class="" style="list-style: none;">
+      <ul class="" id="notice_board_content" style="list-style: none; display: none;">
         <li class="poppins-regular">तारीख: <span id="todaysdate">09-11-2025</span>
         </li>
         <li class="poppins-regular"><img id="wimage" src="asset/Weather/10d.png" alt="weathericon" />
           तापमान: <span id="temp">21.3</span>℃</li>
         <li class="poppins-regular">सूर्योदय: <span id="sunrise">06:12 AM</span></li>
-        <li class="poppins-regular">सूर्यास्त: <span id="sunset">06:45 PM</span></li>
         <li class="poppins-regular">सूर्यास्त: <span id="sunset">06:45 PM</span></li>
         <li class="poppins-regular">दर्शन संख्या: <span id="viewCount">123</span></li>
       </ul>
@@ -150,11 +149,11 @@
 
   <!-- Mahitipat -->
   <div id="mahitipat">
-    <div class="card cust_card" style="width: 18rem">
+    <div class="card cust_card" style="width: 18rem; border-radius:2rem">
       <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230222104738/file.png" class="card-img-top"
-        alt="..." />
+        alt="..." style="border-radius: 2rem 2rem 0px 0px;" />
       <div class="card-body">
-        <h5 class="card-title colour-change">ग्रामपंचायत माहिती</h5>
+        <h5 class="card-title colour-change">ग्रामपंचायत चारमंडळ माहिती</h5>
         <p class="card-text">
           महाराष्ट्रातील ग्रामपंचायत ही गावांमधील तळागाळातील स्थानिक स्वराज्य
           संस्था आहे. ती स्वच्छता, पाणी, रस्ते, कल्याणकारी योजना आणि नोंदी
@@ -162,10 +161,11 @@
           विकासात्मक उपक्रमांचे नेतृत्व करतात.
         </p>
       </div>
-      <ul class="list-group list-group-flush">
+      <ul class="list-group list-group-flush" style="border-radius: 0px 0px 2rem 2rem; border-color: #00000000;">
         <li class="list-group-item fw-semibold">लोकसंख्या:२६०६</li>
         <li class="list-group-item fw-semibold">स्त्री:१३१३ | पुरुष:१२९३</li>
         <li class="list-group-item fw-semibold">मुली:३०७ | मुले:३३६</li>
+        <li class="list-group-item fw-semibold">शौचालये:७२७</li>
       </ul>
       <!-- <div class="card-body">
           <a href="#" class="card-link">Card link</a>
@@ -173,18 +173,20 @@
         </div> -->
     </div>
 
-    <div class="card cust_card" style="width: 18rem">
+    <div class="card cust_card" style="width: 18rem; border-radius:2rem">
       <img src="asset/images/sarpanch.png" class="card-img-top" alt="sarpanchPhoto" />
       <div class="card-body">
-        <h5 class="card-title colour-change">माननीय सरपंच</h5>
+        <h5 class="card-title colour-change poppins-regular fw-bold">
+          <p>माननीय सरपंच</p>
+          <p>सौ.नीता संजय शेलके</p>
+        </h5>
         <p class="card-text">
           सरपंच हा भारतातील ग्रामीण स्थानिक स्वराज्य संस्थेच्या सर्वात लहान
           घटक असलेल्या ग्रामपंचायतीचा निवडून आलेला प्रमुख असतो.
         </p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">संपर्क:२३५४३५४३२</li>
-        <li class="list-group-item">संपर्क:२३५४३५४३२</li>
+        <li class="list-group-item fw-semibold">संपर्क: <a href="tel:8975210355">8975210355</a></li>
         <!-- <li class="list-group-item">A third item</li> -->
       </ul>
       <div class="card-body">
@@ -192,18 +194,20 @@
       </div>
     </div>
 
-    <div class="card cust_card" style="width: 18rem">
+    <div class="card cust_card" style="width: 18rem; border-radius:2rem">
       <img src="asset/images/secratory.png" class="card-img-top" alt="sachivPhoto" />
       <div class="card-body">
-        <h5 class="card-title colour-change">माननीय सचिव</h5>
+        <h5 class="card-title colour-change  poppins-regular fw-bold">
+          <p>माननीय सचिव</p>
+          <p>श्री. धिरज भास्कर शिरभाते</p>
+        </h5>
         <p class="card-text">
           ग्रामपंचायत सचिव ग्रामसभा आणि ग्रामपंचायतीचा सचिव असून तो रेकॉर्ड,
           प्रशासन, योजना आणि विकास कार्यक्रमांची जबाबदारी सांभाळतो.
         </p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">संपर्क:२३५४३५४३२</li>
-        <li class="list-group-item">संपर्क:२३५४३५४३२</li>
+        <li class="list-group-item fw-semibold">संपर्क: <a href="tel:8329947937">8329947937</a></li>
         <!-- <li class="list-group-item">A third item</li> -->
       </ul>
       <div class="card-body">
@@ -219,7 +223,7 @@
   <!-- Button Groups -->
   <span>
     <!-- Public services -->
-    <div class="container-fluid btnvertical">
+    <div class="container-fluid btnvertical" id="public_services_height">
       <h1 class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7">
         सार्वजनिक सेवा/दाखले मागणी
       </h1>
@@ -305,7 +309,7 @@
     </div>
     <span id="dynamicData">
       <!-- Samiti -->
-      <div class="container-fluid btnvertical">
+      <div class="container-fluid btnvertical bachat_gat_samiti_height">
         <h1 class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
           id="samitya">
           समित्या
@@ -388,7 +392,7 @@
       <hr class="w-75 hrline" /> -->
 
       <!-- Bachat gat -->
-      <div class="container-fluid btnvertical">
+      <div class="container-fluid btnvertical bachat_gat_samiti_height">
         <h1 class="poppins-regular text-dark-emphasis text-center p-2 make_sticky box_shadow glass-div margin_top_7"
           id="bachat">
           बचत गट
@@ -908,8 +912,7 @@
               #4f5bd5
             );
           ">
-        <a href="https://www.instagram.com" target="_blank"
-          aria-label="Instagram">
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
           <i class="fa fa-instagram"></i>
         </a>
       </li>

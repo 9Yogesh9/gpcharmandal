@@ -200,10 +200,12 @@ a:active {
 
 .cust_card {
   margin: 1rem 0;
+  padding: 0.30rem;
+  box-shadow: 0px 0px 14px 2px #30dbeec7;
 }
 
 .cust_card:hover {
-  scale: 1.1;
+  scale: 1.03;
   animation: borderchange 3s infinite reverse;
 }
 
@@ -236,7 +238,7 @@ a:active {
 
 .contact_details {
   box-shadow: 1px 1px 16px black;
-  padding: 3px;
+  padding: 7px;
   border-radius: 13px;
   width: 90%;
   background: #fff30040;
@@ -383,13 +385,15 @@ a:active {
 
 .borderImage {
   width: 90%;
+  border: 0.5rem solid wheat;
+  border-radius: 1rem;
   background-color: rgb(12, 93, 12);
   color: white;
-  border-image-source: url(asset/images/mandala_gif.gif);
-  /* border-image-source: url(asset/images/mandala.png); */
-  border-image-slice: 188;
+  /* border-image-source: url(asset/images/mandala_gif.gif);
+  border-image-source: url(asset/images/mandala.png);
+  border-image-slice: 133;
   border-image-width: 15px;
-  border-image-repeat: round;
+  border-image-repeat: round; */
   box-shadow: 0px 0px 12px 5px #504c4cc7;
 }
 
@@ -452,5 +456,13 @@ a:active {
     flex-direction: column;
     padding: 2rem;
     width: 100%;
+  }
+
+  .bachat_gat_samiti_height {
+    height: 8rem;
+  }
+
+  #public_services_height {
+    height: 23rem;
   }
 }

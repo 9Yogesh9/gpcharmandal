@@ -3,6 +3,7 @@ const API_URL =
 // Grab references safely (some elements may not exist on every page)
 const $ = (id) => document.getElementById(id) || null;
 const elements = {
+  notice_board_content: $("notice_board_content"),
   todaysdate: $("todaysdate"),
   wimage: $("wimage"),
   temp: $("temp"),
@@ -177,6 +178,7 @@ const getViewsAndWeather = async () => {
   elements.sunrise.innerText = Weather.sunrise;
   elements.sunset.innerText = Weather.sunset;
   elements.viewCount.innerText = Views;
+  elements.notice_board_content.style.display = "block";
 };
 
 // Fetch complaints for admin
