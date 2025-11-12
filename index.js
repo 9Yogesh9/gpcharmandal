@@ -1,5 +1,5 @@
 const API_URL =
-  "https://script.google.com/macros/s/AKfycbymYyhEjlfF7QZ2gDJIs5c_irKsu3OBMqOYSA-SJdj-OwZgsLPc0c4HylKYWrLxfWqy/exec";
+  "https://script.google.com/macros/s/AKfycbz0-ECf2-Q2BB3bSew8x0jq8KFNifRsN5fympq2wfsTVwOIRivre5jF8XzbqEqrj_sY/exec";
 // Grab references safely (some elements may not exist on every page)
 const $ = (id) => document.getElementById(id) || null;
 const elements = {
@@ -50,6 +50,7 @@ const elements = {
   paymentButton: $("paymentButton"),
   viewCount: $("viewCount"),
   locker: $("locker"),
+  gpstructuredata: $("gpstructuredata"),
 };
 
 // Cache Bootstrap modals
@@ -146,18 +147,18 @@ const toggleResolution = (uniqueID, type) => {
 };
 
 const weatherIconMap = {
-  "01d": "01d",
-  "01n": "01n",
-  "02d": "02d",
-  "02n": "02n",
+  "01d": "01",
+  "01n": "01",
+  "02d": "02",
+  "02n": "02",
   "03d": "03",
   "03n": "03",
   "04d": "04",
   "04n": "04",
   "09d": "09",
   "09n": "09",
-  "10d": "10d",
-  "10n": "10n",
+  "10d": "10",
+  "10n": "10",
   "11d": "11",
   "11n": "11",
   "13d": "13",
@@ -169,9 +170,12 @@ const weatherIconMap = {
 //Get views count
 const getViewsAndWeather = async () => {
   const response = await fetch(`${API_URL}?Method=getViewsAndWeather`);
-  let { Views, Weather } = await response.json();
+  let { Views, Weather, gpStructure } = await response.json();
   if (!response.ok)
     throw new Error(`Failed to fetch view count. Status: ${response.status}`);
+  if (gpStructure.gpstructData.length > 0) {
+    populateGPStructure(gpStructure.gpstructData);
+  }
   elements.todaysdate.innerText = Weather.dt;
   elements.wimage.setAttribute("src", `asset/Weather/${weatherIconMap[Weather.icon]}.png`);
   elements.temp.innerText = Weather.temp;
@@ -180,6 +184,24 @@ const getViewsAndWeather = async () => {
   elements.viewCount.innerText = Views;
   elements.notice_board_content.style.display = "block";
 };
+
+function populateGPStructure(data) {
+  // The table structure for GP Structure
+  let tableHTML = `<div class="table-responsive">
+  <table class="table table-bordered text-center align-middle table-sm">
+  <thead>`;
+  let firstRow = true;
+  data.forEach((item) => {
+    if (firstRow) {
+      tableHTML += `<tr><th>${item[0]}</th><th>${item[1]}</th><th>${item[2]}</th></tr></thead><tbody class="table-group-divider">`;
+      firstRow = false;
+    }else {
+      tableHTML += `<tr><td>${item[0]}</td><td>${item[1]}</td><td>${item[2]}</td></tr>`;
+    }
+  });
+  tableHTML += `</tbody></table></div>`;
+  elements.gpstructuredata.innerHTML = tableHTML;
+}
 
 // Fetch complaints for admin
 const fetchComplaints = async () => {
@@ -443,7 +465,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         elements.paymentQR.setAttribute(
           "src",
-          `https://quickchart.io/qr?text=upi%3A%2F%2Fpay%3Fpn%3DYogesh%26pa%3Dhavefun%40axisb%26am%3D${data.totalTax}&size=160`
+          `https://quickchart.io/qr?text=upi%3A%2F%2Fpay%3Fpn%3DGPCharmandal%26pa%3Dboism-9604034441%40boi%26am%3D${data.totalTax}&size=160`
         );
         elements.paymentButton.href = `upi://pay?pn=Yogesh&pa=havefun@axisb&cu=INR&am=${data.totalTax}`;
         modals.taxDetail.show();

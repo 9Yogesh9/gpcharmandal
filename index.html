@@ -134,7 +134,7 @@
   <!-- Suchna Falak/Notice Board -->
   <div class="borderImage p-3 m-3">
     <div>
-      <h2 style="text-align: center;" class="poppins-regular p-2">नोटीस बोर्ड</h2>
+      <h2 style="text-align: center;" class="poppins-regular p-2">&#128591;नोटीस बोर्ड&#128591;</h2>
       <ul class="" id="notice_board_content" style="list-style: none; display: none;">
         <li class="poppins-regular">तारीख: <span id="todaysdate">09-11-2025</span>
         </li>
@@ -185,13 +185,13 @@
           घटक असलेल्या ग्रामपंचायतीचा निवडून आलेला प्रमुख असतो.
         </p>
       </div>
-      <ul class="list-group list-group-flush">
+      <ul class="list-group list-group-flush" style="border-radius: 0px 0px 2rem 2rem; border-color: #00000000;">
         <li class="list-group-item fw-semibold">संपर्क: <a href="tel:8975210355">8975210355</a></li>
         <!-- <li class="list-group-item">A third item</li> -->
       </ul>
-      <div class="card-body">
+      <!-- <div class="card-body">
         <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#exampleModal3">माहिती</a>
-      </div>
+      </div> -->
     </div>
 
     <div class="card cust_card" style="width: 18rem; border-radius:2rem">
@@ -207,12 +207,12 @@
         </p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item fw-semibold">संपर्क: <a href="tel:8329947937">8329947937</a></li>
+        <li class="list-group-item fw-semibold" style="border-radius: 0px 0px 2rem 2rem; border-color: #00000000;">संपर्क: <a href="tel:8329947937">8329947937</a></li>
         <!-- <li class="list-group-item">A third item</li> -->
       </ul>
-      <div class="card-body">
+      <!-- <div class="card-body">
         <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#exampleModal4">माहिती</a>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- <div class="floating-view-count" id="viewcontainer" style="display: none">
@@ -253,6 +253,8 @@
           >
             Demo
           </button> -->
+        <button type="button" class="btn btncustomise btn-primary poppins-regular" data-bs-toggle="modal"
+          data-bs-target="#gpstructure">कार्यकारणी मंडळ</button>
       </div>
     </div>
     <hr class="w-75 hrline" />
@@ -749,13 +751,13 @@
             <div id="paymentQR_container">
               <p class="text-danger">
                 कृपया या QR वर पेमेंट करा किंवा कर भरण्याच्या बटणावर क्लिक करा
-                आणि पेमेंटचा स्क्रीनशॉट १२३४५६७८९० या मोबाईल नंबरवर व्हॉट्सअप
+                आणि पेमेंटचा स्क्रीनशॉट <a href="https://wa.me/8329947937">८३२९९४७९३७</a>(सचिव) या मोबाईल नंबरवर
+                व्हॉट्सअप
                 करा
               </p>
               <span id="PaymentQR">
-                <!-- src="https://drive.google.com/file/d/1gD36a_G_-NvXmoO2jtxSZodWOhAEiVGY/preview" -->
                 <iframe
-                  src="https://quickchart.io/qr?text=upi%3A%2F%2Fpay%3Fpn%3DYogesh%26pa%3Dhavefun%40axisb%26am%3D10&size=160"
+                  src="https://quickchart.io/qr?text=upi%3A%2F%2Fpay%3Fpn%3DGPCharmandal%26pa%3Dboism-9604034441%40boi%26am%3D10&size=160"
                   id="qrImage" allow="autoplay" title="Payment QR"></iframe>
               </span>
             </div>
@@ -770,32 +772,25 @@
       </div>
     </div>
 
-    <!-- Sarpanch Info -->
-    <div class="modal fade" id="exampleModal3" tabindex="-1">
+    <!-- gpstructure grampanchyat structure -->
+    <div class="modal fade" id="gpstructure" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5 poppins-regular" id="exampleModalLabel">
-              सरपंच माहिती
+              चारमंडळ कार्यकारणी मंडळ
             </h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            सरपंच हा भारतातील ग्रामीण स्थानिक स्वराज्य संस्थेच्या सर्वात लहान
-            घटक असलेल्या ग्रामपंचायतीचा निवडून आलेला प्रमुख असतो. गावपातळीवरील
-            बैठकांचे अध्यक्ष म्हणून, सरपंच स्वच्छता, शिक्षण आणि पायाभूत
-            सुविधांच्या विकास प्रकल्पांच्या अंमलबजावणीवर देखरेख करतात आणि
-            गावातील समुदाय आणि सरकारी संस्थांमधील प्राथमिक संपर्क म्हणून काम
-            करतात. या भूमिकेत तळागाळातील लोकशाहीला चालना देणे, गावाचा
-            सर्वांगीण विकास आणि कल्याण सुनिश्चित करणे आणि गावकऱ्यांमधील वाद
-            सोडवणे समाविष्ट आहे.
+          <div class="modal-body poppins-regular" id="gpstructuredata">
+            
           </div>
         </div>
       </div>
     </div>
 
     <!-- Sachiv Info -->
-    <div class="modal fade" id="exampleModal4" tabindex="-1">
+    <!-- <div class="modal fade" id="exampleModal4" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -814,7 +809,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Puraskar -->
     <div class="modal fade" id="puraskar" tabindex="-1">
