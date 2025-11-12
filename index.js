@@ -187,20 +187,33 @@ const getViewsAndWeather = async () => {
 
 function populateGPStructure(data) {
   // The table structure for GP Structure
-  let tableHTML = `<div class="table-responsive">
-  <table class="table table-bordered text-center align-middle table-sm">
-  <thead>`;
+  let structureHTML = ``;
   let firstRow = true;
   data.forEach((item) => {
     if (firstRow) {
-      tableHTML += `<tr><th>${item[0]}</th><th>${item[1]}</th><th>${item[2]}</th></tr></thead><tbody class="table-group-divider">`;
       firstRow = false;
-    }else {
-      tableHTML += `<tr><td>${item[0]}</td><td>${item[1]}</td><td>${item[2]}</td></tr>`;
+    } else {
+      if (item[1] && item[1] != "") {
+        if (item[3] != "") {
+          structureHTML += `<div class="card" style="width: 90%; margin-top:1rem; display: flex; align-items: center; border: none;">
+  <div class="card-img-top" style="background:url('https://drive.google.com/thumbnail?id=${item[3]}&sz=w1000') center/cover; width:11rem; height:11rem; border-radius:8px;"></div>`
+        }
+        else {
+          structureHTML += `<div class="card" style="width: 90%; margin-top:1rem; display: flex; align-items: center; border: none;">
+  <div class="card-img-top" style="background:url('asset/images/userprof.webp') center/cover; width:11rem; height:11rem; border-radius:8px;"></div>`
+        }
+        structureHTML += `
+  <div class="card-body">
+  <ul class="list-group list-group-flush">
+  <li class="list-group-item fw-semibold">${item[0]}</li>
+  <li class="list-group-item fw-semibold">${item[1]}</li>
+  <li class="list-group-item fw-semibold"><a href="tel:${item[2]}">${item[2]}</a></li>
+  </div>
+</div>`;
+      }
     }
   });
-  tableHTML += `</tbody></table></div>`;
-  elements.gpstructuredata.innerHTML = tableHTML;
+  elements.gpstructuredata.innerHTML = structureHTML;
 }
 
 // Fetch complaints for admin
