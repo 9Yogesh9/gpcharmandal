@@ -1,5 +1,5 @@
 const API_URL =
-  "https://script.google.com/macros/s/AKfycbz0-ECf2-Q2BB3bSew8x0jq8KFNifRsN5fympq2wfsTVwOIRivre5jF8XzbqEqrj_sY/exec";
+  "https://script.google.com/macros/s/AKfycbzv0atIeO7T0OgChoTj9W9_vqzo9IJ1zPh5hHGRYqWvIidjkJ0DNmHa1P-XGgBCUqWV/exec";
 // Grab references safely (some elements may not exist on every page)
 const $ = (id) => document.getElementById(id) || null;
 const elements = {
@@ -51,6 +51,10 @@ const elements = {
   viewCount: $("viewCount"),
   locker: $("locker"),
   gpstructuredata: $("gpstructuredata"),
+  news1image: $("news1image"),
+  news2image: $("news2image"),
+  news1text: $("news1text"),
+  news2text: $("news2text"),
 };
 
 // Cache Bootstrap modals
@@ -185,6 +189,15 @@ const getViewsAndWeather = async () => {
   elements.notice_board_content.style.display = "block";
 };
 
+// function loadNews() {
+//   let news = [['News1', '1q4NgRCuDk5uND-JtRuh4-PwhyUJ0NVkZ'], ['News2', '1q4NgRCuDk5uND-JtRuh4-PwhyUJ0NVkZ']]
+
+//   elements.news1image.style.background = `url('https://drive.google.com/thumbnail?id=${news[0][1]}&sz=w1000') center/cover`;
+//   elements.news2image.style.background = `url('https://drive.google.com/thumbnail?id=${news[1][1]}&sz=w1000') center/cover`;
+//   elements.news1text.innerText = news[0][0];
+//   elements.news2text.innerText = news[1][0];
+// }
+
 function populateGPStructure(data) {
   // The table structure for GP Structure
   let structureHTML = ``;
@@ -195,19 +208,19 @@ function populateGPStructure(data) {
     } else {
       if (item[1] && item[1] != "") {
         if (item[3] != "") {
-          structureHTML += `<div class="card" style="width: 90%; margin-top:1rem; display: flex; align-items: center; border: none;">
-  <div class="card-img-top" style="background:url('https://drive.google.com/thumbnail?id=${item[3]}&sz=w1000') center/cover; width:11rem; height:11rem; border-radius:8px;"></div>`
+          structureHTML += `<div class="card" style="border: none;display: flex; align-items: center;margin-top: 1.3rem;">
+  <div class="card-img-top structure_card_img" style="background:url('https://drive.google.com/thumbnail?id=${item[3]}&sz=w1000') center/cover; width: 11rem; height: 11rem;"></div>`
         }
         else {
-          structureHTML += `<div class="card" style="width: 90%; margin-top:1rem; display: flex; align-items: center; border: none;">
-  <div class="card-img-top" style="background:url('asset/images/userprof.webp') center/cover; width:11rem; height:11rem; border-radius:8px;"></div>`
+          structureHTML += `<div class="card" style="border: none;display: flex; align-items: center;margin-top: 1.3rem;">
+  <div class="card-img-top structure_card_img" style="background:url('asset/images/userprof.webp') center/cover; width: 11rem; height: 11rem;"></div>`
         }
         structureHTML += `
-  <div class="card-body">
+  <div class="card-body" style="padding:0px; margin-top:0.5rem;">
   <ul class="list-group list-group-flush">
-  <li class="list-group-item fw-semibold">${item[0]}</li>
-  <li class="list-group-item fw-semibold">${item[1]}</li>
-  <li class="list-group-item fw-semibold"><a href="tel:${item[2]}">${item[2]}</a></li>
+  <li class="list-group-item fw-semibold name_plate" style="color:white">${item[0]}</li>
+  <li class="list-group-item fw-semibold name_plate" style="color:white">${item[1]}</li>
+  <li class="list-group-item fw-semibold name_plate"><a href="tel:${item[2]}" style="color: white;">${item[2]}</a></li>
   </div>
 </div>`;
       }
@@ -545,6 +558,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial load
   getViewsAndWeather();
+  // loadNews();
   loadComplaints();
   toggleDisplays();
 

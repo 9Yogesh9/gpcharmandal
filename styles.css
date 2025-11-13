@@ -341,6 +341,17 @@ a:active {
   inset-block-start: 0;
 }
 
+.structure_card_img {
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0px 0px 12px #4444a3;
+}
+
+.name_plate {
+  background: url('asset/images/nameplate.webp') center/cover;
+  text-align: center;
+}
+
 /* Locker overlays */
 /* #locker {
   position: fixed;
