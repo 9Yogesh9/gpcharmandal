@@ -352,6 +352,27 @@ a:active {
   text-align: center;
 }
 
+#newsContent{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 1rem;
+  overflow-x: scroll;
+}
+
+.news_card {
+  flex: 0 0 15rem;
+  width: 15rem;
+  margin: 0.5rem 0;
+}
+
+.news_image_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* Locker overlays */
 /* #locker {
   position: fixed;

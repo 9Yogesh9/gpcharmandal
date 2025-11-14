@@ -51,9 +51,13 @@ const elements = {
   viewCount: $("viewCount"),
   locker: $("locker"),
   gpstructuredata: $("gpstructuredata"),
+  news1card: $("news1card"),
   news1image: $("news1image"),
-  news2image: $("news2image"),
+  news1title: $("news1title"),
   news1text: $("news1text"),
+  news2card: $("news2card"),
+  news2image: $("news2image"),
+  news2title: $("news2title"),
   news2text: $("news2text"),
 };
 
@@ -174,12 +178,14 @@ const weatherIconMap = {
 //Get views count
 const getViewsAndWeather = async () => {
   const response = await fetch(`${API_URL}?Method=getViewsAndWeather`);
-  let { Views, Weather, gpStructure } = await response.json();
+  let { Views, Weather, gpStructure, news } = await response.json();
   if (!response.ok)
     throw new Error(`Failed to fetch view count. Status: ${response.status}`);
   if (gpStructure.gpstructData.length > 0) {
     populateGPStructure(gpStructure.gpstructData);
   }
+  console.log(news);
+  loadNews(news);
   elements.todaysdate.innerText = Weather.dt;
   elements.wimage.setAttribute("src", `asset/Weather/${weatherIconMap[Weather.icon]}.png`);
   elements.temp.innerText = Weather.temp;
@@ -189,14 +195,29 @@ const getViewsAndWeather = async () => {
   elements.notice_board_content.style.display = "block";
 };
 
-// function loadNews() {
-//   let news = [['News1', '1q4NgRCuDk5uND-JtRuh4-PwhyUJ0NVkZ'], ['News2', '1q4NgRCuDk5uND-JtRuh4-PwhyUJ0NVkZ']]
-
-//   elements.news1image.style.background = `url('https://drive.google.com/thumbnail?id=${news[0][1]}&sz=w1000') center/cover`;
-//   elements.news2image.style.background = `url('https://drive.google.com/thumbnail?id=${news[1][1]}&sz=w1000') center/cover`;
-//   elements.news1text.innerText = news[0][0];
-//   elements.news2text.innerText = news[1][0];
-// }
+function loadNews(news) {
+  if (news[0][3] == "Publish") {
+    elements.news1card.style.display = "block";
+    if(news[0][2] == ""){
+      elements.news1image.style = `background:url('asset/images/news_placeholder.png') center/cover; border-radius: 1rem 1rem 0px 0px; width: 95%; height: 16rem;`;
+    }else{
+      elements.news1image.style = `background:url('https://drive.google.com/thumbnail?id=${news[0][2]}&sz=w1000') center/cover; border-radius: 1rem 1rem 0px 0px; width: 95%; height: 16rem;`;
+    }
+    elements.news1title.innerText = news[0][1];
+    elements.news1text.innerText = news[0][0];
+  }
+  
+  if (news[1][3] == "Publish") {
+    elements.news2card.style.display = "block";
+    if(news[1][2] == ""){
+      elements.news2image.style = `background:url('asset/images/news_placeholder.png') center/cover; border-radius: 1rem 1rem 0px 0px; width: 95%; height: 16rem;`;
+    }else{
+      elements.news2image.style = `background:url('https://drive.google.com/thumbnail?id=${news[1][2]}&sz=w1000') center/cover; border-radius: 1rem 1rem 0px 0px; width: 95%; height: 16rem;`;
+    }
+    elements.news2title.innerText = news[0][1];
+    elements.news2text.innerText = news[1][0];
+  }
+}
 
 function populateGPStructure(data) {
   // The table structure for GP Structure
@@ -558,7 +579,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial load
   getViewsAndWeather();
-  // loadNews();
   loadComplaints();
   toggleDisplays();
 
