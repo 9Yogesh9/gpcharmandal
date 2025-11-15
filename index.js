@@ -59,6 +59,7 @@ const elements = {
   news2image: $("news2image"),
   news2title: $("news2title"),
   news2text: $("news2text"),
+  newscontainer: $("newscontainer"),
 };
 
 // Cache Bootstrap modals
@@ -196,26 +197,30 @@ const getViewsAndWeather = async () => {
 };
 
 function loadNews(news) {
-  if (news[0][3] == "Publish") {
-    elements.news1card.style.display = "block";
-    if(news[0][2] == ""){
-      elements.news1image.style = `background:url('asset/images/news_placeholder.png') center/cover; border-radius: 1rem 1rem 0px 0px; width: 95%; height: 16rem;`;
-    }else{
-      elements.news1image.style = `background:url('https://drive.google.com/thumbnail?id=${news[0][2]}&sz=w1000') center/cover; border-radius: 1rem 1rem 0px 0px; width: 95%; height: 16rem;`;
+  if (news.length != 0 && (news[0][3] == "Publish" || news[1][3] == "Publish")) {
+    elements.newscontainer.style.display = "block";
+
+    if (news[0][3] == "Publish") {
+      elements.news1card.style.display = "block";
+      if (news[0][2] == "") {
+        elements.news1image.style = `background:url('asset/images/news_placeholder.png') center/cover; border-radius: 1rem 1rem 0px 0px; width: 95%; height: 16rem;`;
+      } else {
+        elements.news1image.style = `background:url('https://drive.google.com/thumbnail?id=${news[0][2]}&sz=w1000') center/cover; border-radius: 1rem 1rem 0px 0px; width: 95%; height: 16rem;`;
+      }
+      elements.news1title.innerText = news[0][1];
+      elements.news1text.innerText = news[0][0];
     }
-    elements.news1title.innerText = news[0][1];
-    elements.news1text.innerText = news[0][0];
-  }
-  
-  if (news[1][3] == "Publish") {
-    elements.news2card.style.display = "block";
-    if(news[1][2] == ""){
-      elements.news2image.style = `background:url('asset/images/news_placeholder.png') center/cover; border-radius: 1rem 1rem 0px 0px; width: 95%; height: 16rem;`;
-    }else{
-      elements.news2image.style = `background:url('https://drive.google.com/thumbnail?id=${news[1][2]}&sz=w1000') center/cover; border-radius: 1rem 1rem 0px 0px; width: 95%; height: 16rem;`;
+
+    if (news[1][3] == "Publish") {
+      elements.news2card.style.display = "block";
+      if (news[1][2] == "") {
+        elements.news2image.style = `background:url('asset/images/news_placeholder.png') center/cover; border-radius: 1rem 1rem 0px 0px; width: 95%; height: 16rem;`;
+      } else {
+        elements.news2image.style = `background:url('https://drive.google.com/thumbnail?id=${news[1][2]}&sz=w1000') center/cover; border-radius: 1rem 1rem 0px 0px; width: 95%; height: 16rem;`;
+      }
+      elements.news2title.innerText = news[0][1];
+      elements.news2text.innerText = news[1][0];
     }
-    elements.news2title.innerText = news[0][1];
-    elements.news2text.innerText = news[1][0];
   }
 }
 
