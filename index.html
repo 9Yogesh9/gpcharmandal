@@ -161,10 +161,11 @@
     </div>
   </div>
 
+  <!-- News Section -->
   <div id="newscontainer" style="display: none;">
     <h2 style="text-align: center; text-shadow: 0 0 1px #000000;" class="poppins-regular glass-div p-2 colour-change">
-      &#128240;ताज्या घडामोडी&#128240;</h2>
-    <div id="newsContent">
+      &#128240;गावातील उपक्रम&#128240;</h2>
+    <div class="horizontal-scroll-container">
       <div id="news1card" class="card cust_card news_card" style="display: none; border-radius: 2rem; margin: 1rem;">
         <div class="news_image_container">
           <div id="news1image"></div>
@@ -199,6 +200,18 @@
           </h5>
           <p id="news3text" class="card-text"></p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Gallery -->
+  <div id="photocontainer" style="display: none;margin: 0.5rem 0px 0px 0px;">
+    <!-- style="display: none;" -->
+    <h2 style="text-align: center; text-shadow: 0 0 1px #000000;" class="poppins-regular glass-div p-2 colour-change">
+      &#128247;फोटो गॅलरी&#128247;
+    </h2>
+    <div id="photoContent" class="horizontal-scroll-container" style="padding-left: 0rem;gap: 0rem;">
+      <div class="card cust_card news_card" style="border-radius: 2rem; margin: 1rem;">
       </div>
     </div>
   </div>
@@ -362,6 +375,9 @@
         </button>
         <button type="button" class="btn btncustomise btn-primary poppins-regular">
           ग्रामसभा मासिकसभा
+        </button>
+        <button type="button" class="btn btncustomise btn-primary poppins-regular" data-bs-toggle="modal" data-bs-target="#photoModal">
+          फोटो लोड करा
         </button>
       </div>
       <hr class="w-75 hrline" />
@@ -841,6 +857,48 @@
           </div>
           <div class="modal-body poppins-regular" id="gpstructuredata">
 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo Gallery All -->
+    <div class="modal fade" id="photogallery" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular">
+              &#128247;फोटो गॅलरी&#128247;
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body poppins-regular" id="photodata"
+            style="display: flex;flex-direction: column;align-items: center;">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- house number input tax Modal -->
+    <div class="modal fade" id="photoModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 poppins-regular">
+              लिंक वापरून फोटो अपलोड करा
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body poppins-regular">
+            <form id="linkUploadForm">
+              <div class="mb-3">
+                <label for="photoLink" class="form-label">फोटो लिंक</label>
+                <input type="text" class="form-control" placeholder="कृपया फोटो लिंक प्रविष्ट करा" id="photoLink"
+                  required />
+              </div>
+              <button type="submit" class="btn btn-primary">अपलोड करा</button>
+            </form>
           </div>
         </div>
       </div>
